@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>江子翠行道會｜小組教材：亞伯拉罕的信心（下）</title>
 
-  <!-- PWA & 桌面捷徑圖示設定 -->
+  <!-- PWA & 桌面捷徑圖示設定（加上 ?v=3 強制更新舊圖示快取） -->
   <meta name="theme-color" content="#007F85">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="江子翠教材">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.json?v=3">
+  <link rel="icon" href="./favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png?v=3">
 
   <style>
     :root {
@@ -63,7 +63,7 @@
       padding-bottom: calc(64px + env(safe-area-inset-bottom));
     }
 
-    /* 頂部毛玻璃導覽列 (Apple Navigation Bar) */
+    /* 頂部毛玻璃導覽列 */
     .navbar {
       position: sticky;
       top: 0;
@@ -130,7 +130,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* 安裝成 App 按鈕（已安裝或 standalone 模式下自動隱藏） */
+    /* 安裝成 App 按鈕（僅在未安裝狀態下顯示，從桌面 App 開啟或安裝完成時自動隱藏） */
     .install-btn {
       display: none;
       align-items: center;
@@ -363,7 +363,7 @@
       margin-bottom: 0;
     }
 
-    /* 互動填空膠囊（採用江子翠行道會企業主色系） */
+    /* 互動填空膠囊 */
     .blank-slot {
       display: inline-flex;
       align-items: center;
@@ -430,7 +430,7 @@
       background-color: var(--brand-primary-tint-hover);
     }
 
-    /* 底部頁面導引列（Apple 順暢單手操作流） */
+    /* 底部頁面導引列 */
     .next-page-bar {
       margin-top: 28px;
       padding-top: 20px;
@@ -599,7 +599,7 @@
       color: var(--brand-primary);
     }
 
-    /* Apple 風格彈出視窗 (Sheet / Popover) */
+    /* Apple 風格彈出視窗 */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -741,7 +741,7 @@
         </div>
       </div>
 
-      <!-- 安裝成 App 按鈕（已安裝成 App 後會自動消失） -->
+      <!-- 安裝成 App 按鈕（未安裝或重整網頁時自動出現；已安裝成 App 後自動消失） -->
       <button class="install-btn" id="installAppBtn" aria-label="安裝成 App">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3v12"/>
@@ -997,7 +997,7 @@
       <span class="sheet-tag">建立桌面 App 捷徑</span>
       <h3 class="sheet-title">將小組教材加入 iPhone / iPad 主畫面</h3>
       <div class="sheet-body">
-        只需三個步驟，即可像原生 App 一樣從桌面一鍵開啟，且此安裝提示將自動隱藏：
+        只需三個步驟，即可像原生 App 一樣從桌面一鍵開啟，且在桌面 App 中此安裝按鈕將自動隱藏：
         <ul class="ios-steps">
           <li><strong>1.</strong> 點擊 Safari 瀏覽器下方（或右上角）的 <strong>「分享」圖示</strong>（方框中有向上箭頭）。</li>
           <li><strong>2.</strong> 向下滑動選單，點擊 <strong>「加入主畫面」</strong>（Add to Home Screen）。</li>
@@ -1030,7 +1030,8 @@
     });
 
     // =================================================================
-    // 2. PWA 安裝成 App 偵測與一鍵安裝邏輯（已安裝後自動消失）
+    // 2. PWA 安裝成 App 偵測與一鍵安裝邏輯
+    //    - 取消安裝時保留按鈕；重整頁面時依據實際系統安裝狀態自動判斷
     // =================================================================
     const installAppBtn = document.getElementById('installAppBtn');
     const iosInstallModal = document.getElementById('iosInstallModal');
@@ -1043,11 +1044,11 @@
       });
     }
 
-    function isAppInstalled() {
+    // 偵測目前是否正以「已安裝的獨立 App (Standalone)」模式開啟
+    function isRunningStandalone() {
       return (
         window.matchMedia('(display-mode: standalone)').matches ||
-        window.navigator.standalone === true ||
-        localStorage.getItem('jiangzicui_app_installed') === 'true'
+        window.navigator.standalone === true
       );
     }
 
@@ -1055,36 +1056,71 @@
       return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
     }
 
-    if (!isAppInstalled() && isIosDevice()) {
-      installAppBtn.classList.add('visible');
+    // 每次載入／重整頁面時即時偵測安裝狀態
+    async function checkInstallAvailability() {
+      // 1. 若已經是從桌面 App 開啟，直接隱藏按鈕
+      if (isRunningStandalone()) {
+        installAppBtn.classList.remove('visible');
+        return;
+      }
+
+      // 2. 支援 getInstalledRelatedApps 的瀏覽器（Chrome/Edge/Android），直接查詢系統是否已安裝此 App
+      if ('getInstalledRelatedApps' in navigator) {
+        try {
+          const relatedApps = await navigator.getInstalledRelatedApps();
+          if (relatedApps.length > 0) {
+            installAppBtn.classList.remove('visible');
+            return;
+          }
+        } catch (err) {}
+      }
+
+      // 3. 若為 iOS 瀏覽器分頁模式，顯示安裝按鈕（供使用者加入主畫面）
+      if (isIosDevice()) {
+        installAppBtn.classList.add('visible');
+      }
     }
 
+    checkInstallAvailability();
+
+    // 監聽瀏覽器發出的可安裝事件（只要系統判定尚未安裝，重整後都會自動觸發並顯示按鈕）
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      if (!isAppInstalled()) {
+      if (!isRunningStandalone()) {
         installAppBtn.classList.add('visible');
       }
     });
 
+    // 點擊「安裝 App」按鈕
     installAppBtn.addEventListener('click', async () => {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') {
-          localStorage.setItem('jiangzicui_app_installed', 'true');
+          // 使用者確認安裝：隱藏按鈕
           installAppBtn.classList.remove('visible');
+          deferredPrompt = null;
+        } else {
+          // 使用者按取消：按鈕保留不消失，若需再次點擊或重整都會正常出現
+          installAppBtn.classList.add('visible');
         }
-        deferredPrompt = null;
       } else if (isIosDevice()) {
         iosInstallModal.classList.add('active');
       }
     });
 
+    // 監聽系統確認安裝完成事件
     window.addEventListener('appinstalled', () => {
-      localStorage.setItem('jiangzicui_app_installed', 'true');
       installAppBtn.classList.remove('visible');
       deferredPrompt = null;
+    });
+
+    // 監聽視窗顯示模式切換（例如安裝後立即切換進獨立視窗）
+    window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
+      if (e.matches) {
+        installAppBtn.classList.remove('visible');
+      }
     });
 
     closeIosModalBtn.addEventListener('click', () => {

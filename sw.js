@@ -2,12 +2,12 @@ const CACHE_NAME = 'jiangzicui-group-v3';
 const ASSETS = [
   './',
   './index.html',
-  './manifest.json',
-  './favicon.ico',
-  './icons/apple-touch-icon.png',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/logo-book.svg'
+  './manifest.json?v=3',
+  './favicon.ico?v=3',
+  './icons/apple-touch-icon.png?v=3',
+  './icons/icon-192.png?v=3',
+  './icons/icon-512.png?v=3',
+  './icons/logo-book.svg?v=3'
 ];
 
 self.addEventListener('install', (event) => {
