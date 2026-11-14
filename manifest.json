@@ -1,11 +1,11 @@
 {
-  "name": "卓越北大行道會｜小組牧養教材",
-  "short_name": "卓越北大教材",
-  "description": "CHANGE LIFE CHURCH 卓越北大行道會小組牧養互動教材",
+  "name": "江子翠行道會｜小組牧養教材",
+  "short_name": "江子翠教材",
+  "description": "江子翠行道會小組牧養互動教材",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#FBFBFD",
-  "theme_color": "#0A3D3F",
+  "background_color": "#F5F5F7",
+  "theme_color": "#007F85",
   "orientation": "portrait-primary",
   "icons": [
     {

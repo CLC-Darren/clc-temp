@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>卓越北大行道會｜小組教材：亞伯拉罕的信心（下）</title>
+  <title>江子翠行道會｜小組教材：亞伯拉罕的信心（下）</title>
 
   <!-- PWA & 桌面捷徑圖示設定 -->
-  <meta name="theme-color" content="#0A3D3F">
+  <meta name="theme-color" content="#007F85">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="卓越北大教材">
+  <meta name="apple-mobile-web-app-title" content="江子翠教材">
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
@@ -17,22 +17,20 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
 
   <style>
-    /* =================================================================
-       企業色與 Apple 風格系統變數（若需微調企業色，只需修改以下數值）
-       ================================================================= */
     :root {
-      --brand-primary: #0A3D3F;        /* 教會企業主色：深青綠 */
-      --brand-primary-hover: #072C2E;
-      --brand-primary-tint: rgba(10, 61, 63, 0.08);
-      --brand-accent: #B8862D;         /* 教會企業輔色：質感暖金 */
-      --brand-accent-tint: rgba(184, 134, 45, 0.12);
+      /* 江子翠行道會企業色 */
+      --brand-primary: #007F85;
+      --brand-primary-hover: #00686D;
+      --brand-primary-tint: rgba(0, 127, 133, 0.10);
+      --brand-primary-tint-hover: rgba(0, 127, 133, 0.17);
+      --brand-primary-border: rgba(0, 127, 133, 0.35);
 
-      /* Apple 官網級別中性色階 */
-      --bg-page: #F5F5F7;              /* Apple 經典淺灰底色 */
-      --bg-card: #FFFFFF;              /* 純白卡片 */
-      --bg-glass: rgba(255, 255, 255, 0.82);
-      --text-primary: #1D1D1F;         /* Apple 標準深炭黑文字 */
-      --text-secondary: #6E6E73;       /* Apple 標準次要灰文字 */
+      /* Apple 官網與 iOS 介面中性色階 */
+      --bg-page: #F5F5F7;
+      --bg-card: #FFFFFF;
+      --bg-glass: rgba(255, 255, 255, 0.84);
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
       --text-tertiary: #86868B;
       --border-hairline: rgba(0, 0, 0, 0.08);
 
@@ -42,7 +40,7 @@
       --radius-md: 14px;
       --radius-pill: 980px;
 
-      /* Apple 官網繁體中文與系統標準字型堆疊 */
+      /* Apple 官網繁體中文與系統字型堆疊 */
       --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang TC", "Hiragino Sans GB", "Heiti TC", "Microsoft JhengHei", sans-serif;
       --font-apple-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang TC", "Microsoft JhengHei", sans-serif;
     }
@@ -53,6 +51,7 @@
       padding: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -64,7 +63,7 @@
       padding-bottom: calc(64px + env(safe-area-inset-bottom));
     }
 
-    /* 頂部毛玻璃導覽列 (Apple Nav Style) */
+    /* 頂部毛玻璃導覽列 (Apple Navigation Bar) */
     .navbar {
       position: sticky;
       top: 0;
@@ -77,7 +76,7 @@
     }
 
     .navbar-inner {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 12px 20px;
       display: flex;
@@ -102,7 +101,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(10, 61, 63, 0.18);
+      box-shadow: 0 2px 8px rgba(0, 127, 133, 0.24);
     }
 
     .church-logo svg {
@@ -118,17 +117,17 @@
 
     .brand-name {
       font-family: var(--font-apple-display);
-      font-size: 0.98rem;
+      font-size: 1.02rem;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.01em;
     }
 
     .brand-sub {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 500;
       color: var(--text-secondary);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
     }
 
     /* 安裝成 App 按鈕（已安裝或 standalone 模式下自動隱藏） */
@@ -159,19 +158,19 @@
     }
 
     .install-btn:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
     }
 
-    /* Apple 簡潔主視覺區 */
+    /* Apple 簡潔課程主視覺區 */
     .hero {
       background-color: #FFFFFF;
       border-bottom: 1px solid var(--border-hairline);
-      padding: 40px 20px 32px;
+      padding: 36px 20px 28px;
       text-align: center;
     }
 
     .container {
-      max-width: 840px;
+      max-width: 820px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -203,62 +202,57 @@
       color: var(--text-secondary);
     }
 
-    .pill-accent {
-      background-color: var(--brand-accent-tint);
-      color: #8C6218;
+    .pill-tint {
+      background-color: var(--brand-primary-tint);
+      color: var(--brand-primary);
     }
 
     h1.hero-title {
       font-family: var(--font-apple-display);
-      font-size: 2.25rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.025em;
-      line-height: 1.2;
+      line-height: 1.22;
       margin-bottom: 12px;
     }
 
     .hero-scripture {
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: var(--text-secondary);
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    /* Apple Segmented Control 風格分頁切換器 */
+    /* Apple iOS Segmented Control 三分頁切換器 */
     .tabs-bar {
-      padding: 20px 0 8px;
+      padding: 20px 0 6px;
     }
 
     .segmented-control {
-      display: flex;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       background-color: rgba(118, 118, 128, 0.12);
       padding: 4px;
       border-radius: 14px;
       gap: 4px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .segmented-control::-webkit-scrollbar {
-      display: none;
     }
 
     .seg-btn {
-      flex: 1;
-      min-width: 118px;
       border: none;
       background: transparent;
       color: var(--text-secondary);
       font-family: var(--font-apple);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      padding: 9px 12px;
+      padding: 10px 8px;
       border-radius: 10px;
       cursor: pointer;
       transition: all 0.22s cubic-bezier(0.25, 0.1, 0.25, 1);
       white-space: nowrap;
+      text-align: center;
     }
 
     .seg-btn:hover {
@@ -275,7 +269,7 @@
     .tab-panel {
       display: none;
       padding-top: 16px;
-      animation: appleFade 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: appleFade 0.26s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .tab-panel.active {
@@ -283,7 +277,7 @@
     }
 
     @keyframes appleFade {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -299,10 +293,12 @@
     .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-hairline);
     }
 
     .card-title {
@@ -314,135 +310,24 @@
     }
 
     .card-subtitle {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
       margin-top: 4px;
     }
 
-    /* 首頁：小組資訊卡片網格 (Bento Grid 風格) */
-    .group-info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .bento-box {
-      background-color: var(--bg-page);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .bento-box.full-width {
-      grid-column: 1 / -1;
-    }
-
-    .bento-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      letter-spacing: 0.03em;
-    }
-
-    .bento-value {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .bento-note {
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      line-height: 1.65;
-    }
-
-    .flow-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .flow-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #FFFFFF;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 0.94rem;
-    }
-
-    .flow-step {
+    .toolbar-actions {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 600;
-      color: var(--text-primary);
     }
 
-    .flow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--brand-accent);
-    }
-
-    .flow-time {
-      font-size: 0.82rem;
+    .progress-pill {
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--brand-primary);
       background-color: var(--brand-primary-tint);
-      padding: 3px 10px;
+      padding: 6px 12px;
       border-radius: var(--radius-pill);
-    }
-
-    .cta-next-btn {
-      width: 100%;
-      background-color: var(--brand-primary);
-      color: #FFFFFF;
-      border: none;
-      padding: 14px 20px;
-      border-radius: 14px;
-      font-family: var(--font-apple);
-      font-size: 0.98rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s, transform 0.15s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .cta-next-btn:hover {
-      background-color: var(--brand-primary-hover);
-    }
-
-    .cta-next-btn:active {
-      transform: scale(0.99);
-    }
-
-    /* 工具列與按鈕 */
-    .helper-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: var(--bg-page);
-      padding: 12px 16px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .helper-text {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
     }
 
     .pill-action-btn {
@@ -455,42 +340,54 @@
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      transition: opacity 0.2s;
+      transition: background-color 0.2s, transform 0.15s;
     }
 
     .pill-action-btn:hover {
-      opacity: 0.88;
+      background-color: var(--brand-primary-hover);
+    }
+
+    .pill-action-btn:active {
+      transform: scale(0.96);
     }
 
     /* 信息文章段落 */
     .article-body p {
-      margin-bottom: 1.45em;
-      font-size: 1.04rem;
+      margin-bottom: 1.5em;
+      font-size: 1.05rem;
       color: var(--text-primary);
-      line-height: 1.85;
+      line-height: 1.88;
     }
 
-    /* 互動填空膠囊 */
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 互動填空膠囊（採用江子翠行道會企業主色系） */
     .blank-slot {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 92px;
+      min-width: 94px;
       padding: 2px 12px;
       margin: 0 3px;
-      background-color: var(--brand-accent-tint);
-      border-bottom: 2px solid var(--brand-accent);
-      border-radius: 8px;
+      background-color: var(--brand-primary-tint);
+      border: 1.5px dashed var(--brand-primary-border);
+      border-radius: 9px;
       cursor: pointer;
       font-weight: 600;
-      color: #8C6218;
-      transition: all 0.2s ease;
+      color: var(--brand-primary);
+      transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
       user-select: none;
       vertical-align: baseline;
     }
 
     .blank-slot:hover {
-      background-color: rgba(184, 134, 45, 0.2);
+      background-color: var(--brand-primary-tint-hover);
+    }
+
+    .blank-slot:active {
+      transform: scale(0.96);
     }
 
     .blank-slot .answer-text {
@@ -504,8 +401,9 @@
 
     .blank-slot.revealed {
       background-color: var(--brand-primary);
-      border-bottom-color: var(--brand-primary);
+      border: 1.5px solid var(--brand-primary);
       color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0, 127, 133, 0.22);
     }
 
     .blank-slot.revealed .answer-text {
@@ -529,7 +427,40 @@
     }
 
     .pop-trigger:hover {
-      background-color: rgba(10, 61, 63, 0.16);
+      background-color: var(--brand-primary-tint-hover);
+    }
+
+    /* 底部頁面導引列（Apple 順暢單手操作流） */
+    .next-page-bar {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-hairline);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .next-page-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-page);
+      color: var(--brand-primary);
+      border: none;
+      padding: 11px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-apple);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.15s;
+    }
+
+    .next-page-btn:hover {
+      background-color: var(--brand-primary-tint);
+    }
+
+    .next-page-btn:active {
+      transform: scale(0.97);
     }
 
     /* 經文背景與難字解析列表 */
@@ -560,17 +491,17 @@
 
     .lang-badge {
       font-size: 0.78rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--brand-primary);
       background-color: var(--brand-primary-tint);
-      padding: 2px 10px;
+      padding: 3px 10px;
       border-radius: var(--radius-pill);
     }
 
     .block-desc {
       font-size: 0.96rem;
       color: var(--text-secondary);
-      line-height: 1.75;
+      line-height: 1.78;
     }
 
     .block-desc strong {
@@ -621,7 +552,7 @@
       font-size: 1.03rem;
       font-weight: 600;
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.62;
     }
 
     .guide-btn {
@@ -636,11 +567,15 @@
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.15s;
     }
 
     .guide-btn:hover {
       background-color: var(--brand-primary-tint);
+    }
+
+    .guide-btn:active {
+      transform: scale(0.97);
     }
 
     .guide-content {
@@ -652,18 +587,19 @@
       border-radius: 12px;
       font-size: 0.92rem;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .guide-content.open {
       display: block;
+      animation: appleFade 0.2s ease;
     }
 
     .guide-content strong {
       color: var(--brand-primary);
     }
 
-    /* Apple 風格彈出視窗 (經文泡泡 & iOS 安裝指引) */
+    /* Apple 風格彈出視窗 (Sheet / Popover) */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -730,11 +666,6 @@
       margin-bottom: 10px;
     }
 
-    .sheet-tag.theology {
-      background-color: var(--brand-accent-tint);
-      color: #8C6218;
-    }
-
     .sheet-title {
       font-family: var(--font-apple-display);
       font-size: 1.28rem;
@@ -758,12 +689,11 @@
       border-top: 1px solid var(--border-hairline);
     }
 
-    /* iOS 安裝步驟清單 */
     .ios-steps {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       margin: 14px 0;
     }
 
@@ -786,14 +716,14 @@
     @media (max-width: 640px) {
       h1.hero-title { font-size: 1.75rem; }
       .card { padding: 22px 18px; }
-      .group-info-grid { grid-template-columns: 1fr; }
+      .seg-btn { font-size: 0.84rem; padding: 9px 6px; }
       .guide-btn, .guide-content { margin-left: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 頂部毛玻璃導覽列（含書本外框剪影 Logo 與一鍵安裝 App 按鈕） -->
+  <!-- 頂部毛玻璃導覽列（江子翠行道會 Logo + 一鍵安裝 App 按鈕） -->
   <nav class="navbar">
     <div class="navbar-inner">
       <div class="brand-group">
@@ -802,12 +732,12 @@
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 34 Q41 30 60 41 L60 89 Q41 78 22 82 Z" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M98 34 Q79 30 60 41 L60 89 Q79 78 98 82 Z" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="60" y1="41" x2="60" y2="89" stroke="#B8862D" stroke-width="5" stroke-linecap="round"/>
+            <line x1="60" y1="41" x2="60" y2="89" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-name">卓越北大行道會</span>
-          <span class="brand-sub">CHANGE LIFE CHURCH｜小組牧養教材</span>
+          <span class="brand-name">江子翠行道會</span>
+          <span class="brand-sub">小組牧養教材</span>
         </div>
       </div>
 
@@ -829,7 +759,7 @@
       <div class="eyebrow-row">
         <span class="pill-tag pill-primary">WEEK 2</span>
         <span class="pill-tag pill-neutral">2026/11/10 — 11/15</span>
-        <span class="pill-tag pill-accent">系列：信心 ④</span>
+        <span class="pill-tag pill-tint">信心 ④</span>
       </div>
       <h1 class="hero-title">亞伯拉罕的信心（下）</h1>
       <div class="hero-scripture">
@@ -839,12 +769,11 @@
     </div>
   </header>
 
-  <!-- Apple Segmented Control 分頁導覽（首頁第一頁為小組資訊） -->
+  <!-- Apple Segmented Control 三大功能分頁導覽 -->
   <div class="tabs-bar">
     <div class="container">
       <div class="segmented-control" role="tablist">
-        <button class="seg-btn active" data-tab="tab-group">小組資訊</button>
-        <button class="seg-btn" data-tab="tab-info">信息填空</button>
+        <button class="seg-btn active" data-tab="tab-info">信息互動填空</button>
         <button class="seg-btn" data-tab="tab-bg">背景與註釋</button>
         <button class="seg-btn" data-tab="tab-discuss">小組討論</button>
       </div>
@@ -853,88 +782,18 @@
 
   <main class="container">
 
-    <!-- 第一頁（首頁預設顯示）：小組資訊 -->
-    <section id="tab-group" class="tab-panel active">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h2 class="card-title">本週小組聚會資訊</h2>
-            <p class="card-subtitle">歡迎來到小組，讓我們一起在神的話語中彼此建造與連結</p>
-          </div>
-          <span class="pill-tag pill-accent">牧養月刊 11 月號</span>
-        </div>
-
-        <div class="group-info-grid">
-          <div class="bento-box">
-            <span class="bento-label">聚會日期週次</span>
-            <span class="bento-value">2026 年 11/10（二）— 11/15（日）</span>
-          </div>
-          <div class="bento-box">
-            <span class="bento-label">本週聚會主題</span>
-            <span class="bento-value">信心 ④：亞伯拉罕的信心（下）</span>
-          </div>
-          <div class="bento-box">
-            <span class="bento-label">主題經文</span>
-            <span class="bento-value">
-              <span class="pop-trigger" data-pop="heb11_17_19">希伯來書 11:17–19</span>、創世記 22:1–18
-            </span>
-          </div>
-          <div class="bento-box">
-            <span class="bento-label">本週金句背誦</span>
-            <span class="bento-value">「在耶和華的山上必有預備。」（創 22:14）</span>
-          </div>
-
-          <div class="bento-box full-width">
-            <span class="bento-label">聚會建議流程（約 90 分鐘）</span>
-            <ul class="flow-list">
-              <li class="flow-item">
-                <span class="flow-step"><span class="flow-dot"></span>1. 破冰相交與近況分享</span>
-                <span class="flow-time">15 分鐘</span>
-              </li>
-              <li class="flow-item">
-                <span class="flow-step"><span class="flow-dot"></span>2. 敬拜讚美與禱告預備心</span>
-                <span class="flow-time">15 分鐘</span>
-              </li>
-              <li class="flow-item">
-                <span class="flow-step"><span class="flow-dot"></span>3. 神的話語：信息回顧與互動填空</span>
-                <span class="flow-time">20 分鐘</span>
-              </li>
-              <li class="flow-item">
-                <span class="flow-step"><span class="flow-dot"></span>4. 生命見證與小組問題討論</span>
-                <span class="flow-time">30 分鐘</span>
-              </li>
-              <li class="flow-item">
-                <span class="flow-step"><span class="flow-dot"></span>5. 彼此代禱與教會消息報告</span>
-                <span class="flow-time">10 分鐘</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="bento-box full-width">
-            <span class="bento-label">教會牧養與代禱焦點</span>
-            <p class="bento-note">
-              • 為每位組員在工作、家庭與財務中經歷「耶和華以勒」的信實預備禱告。<br>
-              • 為本週參與主日聚會與福音新朋友的跟進關懷禱告，願小組成為彼此溫暖的家。
-            </p>
-          </div>
-        </div>
-
-        <button class="cta-next-btn" onclick="switchToTab('tab-info')">
-          <span>開始本週信息互動填空</span>
-          <span>→</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- 第二頁：信息內容（互動填空） -->
-    <section id="tab-info" class="tab-panel">
+    <!-- 第一頁（預設首頁）：信息內文與互動填空 -->
+    <section id="tab-info" class="tab-panel active">
       <div class="card">
         <div class="card-header">
           <div>
             <h2 class="card-title">信息內文與互動填空</h2>
-            <p class="card-subtitle">點擊金色空格可顯示解答，點擊底線詞彙可閱讀經文與神學解析</p>
+            <p class="card-subtitle">點擊虛線空格顯示解答，點擊底線詞彙查看經文與神學解析</p>
           </div>
-          <button class="pill-action-btn" id="toggleAllBtn">顯示全部解答</button>
+          <div class="toolbar-actions">
+            <span class="progress-pill" id="blankProgress">已解鎖 0 / 7</span>
+            <button class="pill-action-btn" id="toggleAllBtn">顯示全部</button>
+          </div>
         </div>
 
         <div class="article-body">
@@ -962,10 +821,17 @@
             不論你現在處境如何，或許你正面臨信心的試驗，神要你獻上你生命中的以撒，可能是工作、金錢，或者是交往很久不信主的弟兄，讓我們憑著信心聽神的話，或許不能理解，但我們願意接受神的安排，歡喜領受。快要承受不住的時候，神必定給我們開出一條路來；當我們順服到底，就會看到生命中想像不到的美好。讓我們即使痛苦掙扎，也願意把生命獻上，沒有什麼能夠攔阻我們走向神。神必照應許祝福他和他信心的後裔！
           </p>
         </div>
+
+        <div class="next-page-bar">
+          <button class="next-page-btn" onclick="switchToTab('tab-bg')">
+            <span>下一步：背景與註釋</span>
+            <span>→</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- 第三頁：經文背景與難字註釋 -->
+    <!-- 第二頁：背景與註釋 -->
     <section id="tab-bg" class="tab-panel">
       <div class="card">
         <div class="card-header">
@@ -1041,10 +907,17 @@
           </div>
           <p class="block-desc">在古代近東城市結構中，「城門」是全城防禦最堅固的軍事要塞，也是長老審判、商業交易與政權運作的行政中心。「得著仇敵的城門」意味著<strong>徹底攻克敵人的權勢、掌握主導權與得勝的地位</strong>（參太 16:18）。</p>
         </div>
+
+        <div class="next-page-bar">
+          <button class="next-page-btn" onclick="switchToTab('tab-discuss')">
+            <span>下一步：小組討論</span>
+            <span>→</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- 第四頁：小組問題與討論 -->
+    <!-- 第三頁：小組討論 -->
     <section id="tab-discuss" class="tab-panel">
       <div class="card">
         <div class="card-header">
@@ -1103,7 +976,7 @@
   </main>
 
   <footer>
-    <p>卓越北大行道會 CHANGE LIFE CHURCH｜小組牧養教材</p>
+    <p>江子翠行道會｜小組牧養教材互動版</p>
   </footer>
 
   <!-- 經文與神學解析視窗 -->
@@ -1128,7 +1001,7 @@
         <ul class="ios-steps">
           <li><strong>1.</strong> 點擊 Safari 瀏覽器下方（或右上角）的 <strong>「分享」圖示</strong>（方框中有向上箭頭）。</li>
           <li><strong>2.</strong> 向下滑動選單，點擊 <strong>「加入主畫面」</strong>（Add to Home Screen）。</li>
-          <li><strong>3.</strong> 點擊右上角 <strong>「新增」</strong>，桌面上就會出現教會書本圖示 App！</li>
+          <li><strong>3.</strong> 點擊右上角 <strong>「新增」</strong>，桌面上就會出現江子翠行道會書本圖示 App！</li>
         </ul>
       </div>
       <div class="sheet-footer">提示：若使用 Android 手機或電腦版 Chrome / Edge，點擊「安裝 App」即可直接一鍵安裝。</div>
@@ -1137,7 +1010,7 @@
 
   <script>
     // =================================================================
-    // 1. 分頁切換功能（支援從首頁按鈕跳轉）
+    // 1. 分頁切換功能
     // =================================================================
     const segBtns = document.querySelectorAll('.seg-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
@@ -1164,35 +1037,28 @@
     const closeIosModalBtn = document.getElementById('closeIosModalBtn');
     let deferredPrompt = null;
 
-    // 註冊 Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').catch(() => {});
       });
     }
 
-    // 判斷是否已經以 App (Standalone) 模式開啟
     function isAppInstalled() {
       return (
         window.matchMedia('(display-mode: standalone)').matches ||
         window.navigator.standalone === true ||
-        localStorage.getItem('changelife_app_installed') === 'true'
+        localStorage.getItem('jiangzicui_app_installed') === 'true'
       );
     }
 
-    // 判斷是否為 iOS 裝置
     function isIosDevice() {
       return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
     }
 
-    // 初始化按鈕顯示狀態
-    if (!isAppInstalled()) {
-      if (isIosDevice()) {
-        installAppBtn.classList.add('visible');
-      }
+    if (!isAppInstalled() && isIosDevice()) {
+      installAppBtn.classList.add('visible');
     }
 
-    // 監聽 Android / Chrome / Edge 的安裝事件
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
@@ -1201,13 +1067,12 @@
       }
     });
 
-    // 點擊「安裝 App」按鈕
     installAppBtn.addEventListener('click', async () => {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') {
-          localStorage.setItem('changelife_app_installed', 'true');
+          localStorage.setItem('jiangzicui_app_installed', 'true');
           installAppBtn.classList.remove('visible');
         }
         deferredPrompt = null;
@@ -1216,9 +1081,8 @@
       }
     });
 
-    // 監聽安裝完成事件，安裝後按鈕永久消失
     window.addEventListener('appinstalled', () => {
-      localStorage.setItem('changelife_app_installed', 'true');
+      localStorage.setItem('jiangzicui_app_installed', 'true');
       installAppBtn.classList.remove('visible');
       deferredPrompt = null;
     });
@@ -1231,16 +1095,29 @@
     });
 
     // =================================================================
-    // 3. 互動填空點擊顯示／隱藏
+    // 3. 互動填空點擊顯示／隱藏 + 即時進度計數
     // =================================================================
     const blankSlots = document.querySelectorAll('.blank-slot');
     const toggleAllBtn = document.getElementById('toggleAllBtn');
+    const blankProgress = document.getElementById('blankProgress');
     let allRevealed = false;
+
+    function updateBlankState() {
+      const revealedCount = document.querySelectorAll('.blank-slot.revealed').length;
+      blankProgress.textContent = `已解鎖 ${revealedCount} / ${blankSlots.length}`;
+      if (revealedCount === blankSlots.length) {
+        allRevealed = true;
+        toggleAllBtn.textContent = '隱藏全部';
+      } else if (revealedCount === 0) {
+        allRevealed = false;
+        toggleAllBtn.textContent = '顯示全部';
+      }
+    }
 
     blankSlots.forEach(slot => {
       const toggleSlot = () => {
         slot.classList.toggle('revealed');
-        updateToggleAllBtnState();
+        updateBlankState();
       };
       slot.addEventListener('click', toggleSlot);
       slot.addEventListener('keydown', (e) => {
@@ -1254,19 +1131,8 @@
     toggleAllBtn.addEventListener('click', () => {
       allRevealed = !allRevealed;
       blankSlots.forEach(slot => slot.classList.toggle('revealed', allRevealed));
-      toggleAllBtn.textContent = allRevealed ? '隱藏全部解答' : '顯示全部解答';
+      updateBlankState();
     });
-
-    function updateToggleAllBtnState() {
-      const revealedCount = document.querySelectorAll('.blank-slot.revealed').length;
-      if (revealedCount === blankSlots.length) {
-        allRevealed = true;
-        toggleAllBtn.textContent = '隱藏全部解答';
-      } else if (revealedCount === 0) {
-        allRevealed = false;
-        toggleAllBtn.textContent = '顯示全部解答';
-      }
-    }
 
     // =================================================================
     // 4. 小組討論帶領方向展開/收合
@@ -1284,91 +1150,78 @@
     // =================================================================
     const bubbleData = {
       heb11_17_19: {
-        type: 'scripture',
         typeLabel: '主題經文｜和合本',
         title: '希伯來書 11:17–19',
         content: '「17 亞伯拉罕因著信，被試驗的時候，就把以撒獻上；這便是那歡喜領受應許的，將自己獨生的兒子獻上。18 論到這兒子，曾有話說：『從以撒生的才要稱為你的後裔。』19 他以為神還能叫人從死裡復活；他也彷彿從死中得回他的兒子來。」',
         source: '神學洞見：在亞伯拉罕之前，聖經從未記載過死人復活的先例；亞伯拉罕是憑著對神全能與信實的認識，推論出神必叫以撒復活。'
       },
       call_faith: {
-        type: 'theology',
         typeLabel: '神學概念｜對呼召的信心',
         title: '創世記 12:1–4 / 希伯來書 11:8',
         content: '「亞伯拉罕因著信，蒙召的時候就遵命出去，往將來要得為業的地方去；出去的時候，還不知往哪裡去。」真正的信心不是先看清地圖才出發，而是因為信任帶領者，便勇敢踏出舒適圈。',
         source: '回顧系列信息：《信心（一）》'
       },
       promise_faith: {
-        type: 'theology',
         typeLabel: '神學概念｜對應許的信心',
         title: '羅馬書 4:18–21 / 希伯來書 11:11–12',
         content: '「他在無可指望的時候，因信仍有指望，就得以作多國的父……且滿心相信神所應許的必能做成。」當身體如同已死、環境完全不可能時，信心單單抓緊神的話語。',
         source: '回顧系列信息：《信心（二）》'
       },
       death_faith: {
-        type: 'theology',
         typeLabel: '神學概念｜超越死亡的信心',
         title: '希伯來書 11:13–16',
         content: '「這些人都是存著信心死的，並沒有得著所應許的；卻從遠處望見，且歡喜迎接，又承認自己在世上是客旅，是寄居的。」信心超越今生短暫的得失，望見神在永恆中預備更美的家鄉。',
         source: '回顧系列信息：《信心（三）》'
       },
       testing_vs_temptation: {
-        type: 'theology',
         typeLabel: '聖經神學｜試驗（Testing）',
         title: '神為什麼要試驗人？',
         content: '神是全知的，祂試驗亞伯拉罕不是因為神不知道亞伯拉罕的內心，而是為了讓亞伯拉罕自己以及世世代代的信徒，透過實際行動「看見並確認」這份信心的真實與純度（申命記 8:2）。',
         source: '參考：丁道爾舊約聖經註釋《創世記》'
       },
       gen22_1_2: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '創世記 22:1–2',
         content: '「1 這些事以後，神要試驗亞伯拉罕，就呼叫他說：『亞伯拉罕！』他說：『我在這裡。』2 神說：『你帶著你的兒子，就是你獨生的兒子，你所愛的以撒，往摩利亞地去，在我所要指示你的山上，把他獻為燔祭。』」',
         source: '經文細節：原文連用三個遞進稱呼「你的兒子 → 獨生的兒子 → 你所愛的以撒」，層層觸動父親最深的情感。'
       },
       only_son: {
-        type: 'theology',
         typeLabel: '救贖預表｜獨生的愛子',
         title: '以撒與基督的預表關係',
         content: '以撒背負燔祭的木柴走上摩利亞山（創 22:6），順服年邁父親的捆綁；這正是耶穌基督背負十字架走上各各他山坡（約 19:17）、順服天父旨意直至受死的鮮明預表。',
         source: '參考：麥克阿瑟新約註釋《希伯來書》'
       },
       cor10_13: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '哥林多前書 10:13',
         content: '「你們所遇見的試探，無非是人所能受的。神是信實的，必不叫你們受試探過於所能受的；在受試探的時候，總要給你們開一條出路，叫你們能忍受得住。」',
         source: '神學應許：神是環境的掌管者，祂為每一個試煉設定了上限，並同時預備了「承受的力量」與「出路」。'
       },
       pet1_7: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '彼得前書 1:7',
         content: '「叫你們的信心既被試驗，就比那被火試驗仍然能壞的金子更顯寶貴，可以在耶穌基督顯現的時候得著稱讚、榮耀、尊貴。」',
         source: '經文意象：連世人最看重的純金在末日都會毀壞，但經過苦難火煉的信心卻具有永恆的價值。'
       },
       gen22_3: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '創世記 22:3',
         content: '「亞伯拉罕清早起來，備上驢，帶著兩個僕人和他兒子以撒，也劈好了燔祭的柴，就起身往神所指示他的地方去了。」',
         source: '行動詮釋：「清早起來」顯示他沒有拖延、沒有與人商量妥協，而是立刻以行動回應神的命令。'
       },
       gen22_11_12: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '創世記 22:11–12',
         content: '「11 耶和華的使者從天上呼叫他說：『亞伯拉罕！亞伯拉罕！』他說：『我在這裡。』12 天使說：『你不可在這童子身上下手。一點不可害他！現在我知道你是敬畏神的了；因為你沒有將你的兒子，就是你獨生的兒子，留下不給我。』」',
         source: '神學核心：「敬畏神」在聖經中不是恐懼退縮，而是把神放在一切所愛之上。'
       },
       gen22_13_14: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '創世記 22:13–14',
         content: '「13 亞伯拉罕舉目觀看，不料，有一只公羊，兩角扣在稠密的小樹中，亞伯拉罕就取了那只公羊來，獻為燔祭，代替他的兒子。14 亞伯拉罕給那地方起名叫『耶和華以勒』（就是耶和華必預備的意思），直到今日人還說：『在耶和華的山上必有預備。』」',
         source: '關鍵字詞：「代替」一詞確立了舊約代贖祭祀的核心原則——無辜的祭牲代替應許之子受死。'
       },
       gen22_15_18: {
-        type: 'scripture',
         typeLabel: '相關經文｜和合本',
         title: '創世記 22:15–18',
         content: '「15 耶和華的使者第二次從天上呼叫亞伯拉罕說：16『耶和華說：你既行了這事，不留下你的兒子，就是你獨生的兒子，我便指著自己起誓說：17 論福，我必賜大福給你；論子孫，我必叫你的子孫多起來，如同天上的星，海邊的沙。你子孫必得著仇敵的城門，18 並且地上萬國都必因你的後裔得福，因為你聽從了我的話。』」',
@@ -1389,7 +1242,6 @@
         if (!data) return;
 
         bubbleType.textContent = data.typeLabel;
-        bubbleType.className = 'sheet-tag' + (data.type === 'theology' ? ' theology' : '');
         bubbleTitle.textContent = data.title;
         bubbleContent.textContent = data.content;
         bubbleSource.textContent = data.source;

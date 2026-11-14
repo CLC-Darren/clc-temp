@@ -1,4 +1,4 @@
-const CACHE_NAME = 'changelife-group-v1';
+const CACHE_NAME = 'jiangzicui-group-v2';
 const ASSETS = [
   './',
   './index.html',
