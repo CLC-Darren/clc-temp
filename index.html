@@ -1,400 +1,992 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hannah's Studio — Art, Crafts & LEGO</title>
-<meta name="description" content="A little portfolio of Hannah's drawings, crafts and LEGO builds.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --pink-50:  #fff5f8;
-    --pink-100: #ffe4ee;
-    --pink-200: #ffc8dc;
-    --pink-400: #ff8fb8;
-    --pink-600: #e85a92;
-    --pink-800: #a8325f;
-    --sea:      #8fd8e0;
-    --sea-deep: #4fb3c2;
-    --sand:     #fbe9cf;
-    --gold:     #f6c453;
-    --ink:      #4a2c3a;
-    --muted:    #8a6a78;
-    --card:     #ffffff;
-    --radius:   22px;
-    --shadow:   0 10px 30px -12px rgba(168, 50, 95, .25);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: "Nunito", system-ui, sans-serif;
-    color: var(--ink);
-    background: var(--pink-50);
-    line-height: 1.6;
-  }
-  h1, h2, h3, .logo, .chip { font-family: "Fredoka", "Nunito", sans-serif; }
-  a { color: inherit; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小組教材｜信心④ 亞伯拉罕的信心（下）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #F7F5F0;
+      --bg-card: #FFFFFF;
+      --primary: #1E3F3B;       /* 教會沉穩深青綠 */
+      --primary-light: #EBF2F0;
+      --accent: #C58F36;        /* 溫暖大地金 */
+      --accent-light: #FDF6EA;
+      --text-main: #2C302E;
+      --text-muted: #646B68;
+      --border: #E2DDD3;
+      --shadow: 0 8px 24px rgba(30, 63, 59, 0.06);
+      --radius: 14px;
+    }
 
-  /* ---------- Nav ---------- */
-  nav {
-    position: sticky; top: 0; z-index: 20;
-    background: rgba(255, 245, 248, .85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--pink-100);
-  }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 600; text-decoration: none; color: var(--pink-800); }
-  .logo svg { width: 34px; height: 34px; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
-  nav ul a { text-decoration: none; font-weight: 600; color: var(--muted); transition: color .2s; }
-  nav ul a:hover { color: var(--pink-600); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative; overflow: hidden;
-    background: linear-gradient(180deg, var(--pink-100) 0%, #ffeef4 55%, var(--sand) 100%);
-    padding: 80px 0 150px;
-  }
-  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; position: relative; z-index: 2; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #fff; color: var(--pink-600);
-    padding: 6px 14px; border-radius: 999px;
-    font-weight: 700; font-size: .85rem; letter-spacing: .02em;
-    box-shadow: var(--shadow);
-  }
-  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.05; margin: 20px 0 16px; color: var(--pink-800); font-weight: 700; }
-  .hero h1 span { color: var(--pink-600); }
-  .hero p { font-size: 1.15rem; color: var(--muted); max-width: 30em; }
-  .btn {
-    display: inline-block; margin-top: 28px;
-    background: var(--pink-600); color: #fff; text-decoration: none;
-    padding: 14px 28px; border-radius: 999px; font-weight: 700;
-    box-shadow: 0 8px 20px -8px var(--pink-600);
-    transition: transform .2s, box-shadow .2s;
-  }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px var(--pink-600); }
-  .hero-art { display: flex; justify-content: center; }
-  .hero-art svg { width: 100%; max-width: 380px; filter: drop-shadow(0 20px 30px rgba(168,50,95,.18)); }
-  .float { animation: float 5s ease-in-out infinite; }
-  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.85;
+      padding-bottom: 60px;
+    }
 
-  .sparkle { position: absolute; color: var(--gold); font-size: 1.4rem; opacity: .8; animation: twinkle 3s ease-in-out infinite; }
-  @keyframes twinkle { 0%,100% { opacity: .2; transform: scale(.8); } 50% { opacity: .9; transform: scale(1.1); } }
+    /* 頂部教會識別橫幅 */
+    .top-bar {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .waves { position: absolute; left: 0; right: 0; bottom: -2px; z-index: 1; }
-  .waves svg { display: block; width: 100%; height: 120px; }
+    .top-bar span.brand {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-  /* ---------- Section headings ---------- */
-  section { padding: 80px 0; }
-  .section-head { text-align: center; margin-bottom: 40px; }
-  .section-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--pink-800); font-weight: 600; }
-  .section-head p { color: var(--muted); margin-top: 6px; }
+    .top-bar span.brand::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
 
-  /* ---------- Filters ---------- */
-  .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px; }
-  .chip {
-    border: 2px solid var(--pink-200); background: #fff; color: var(--pink-800);
-    padding: 8px 20px; border-radius: 999px; font-size: 1rem; font-weight: 500;
-    cursor: pointer; transition: all .2s;
-  }
-  .chip:hover { border-color: var(--pink-400); }
-  .chip.active { background: var(--pink-600); border-color: var(--pink-600); color: #fff; }
+    /* 主視覺標題區 */
+    .hero {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F2EFE9 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 20px 28px;
+    }
 
-  /* ---------- Gallery ---------- */
-  #gallery-section { background: linear-gradient(180deg, #e9f8fa 0%, var(--pink-50) 140px); }
-  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 26px; }
-  .card {
-    background: var(--card); border-radius: var(--radius); overflow: hidden;
-    box-shadow: var(--shadow); cursor: pointer;
-    transition: transform .25s, box-shadow .25s;
-    animation: pop .4s ease both;
-  }
-  .card:hover { transform: translateY(-6px) rotate(-.6deg); box-shadow: 0 18px 36px -14px rgba(168,50,95,.35); }
-  @keyframes pop { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: none; } }
-  .thumb { aspect-ratio: 4 / 3; display: grid; place-items: center; font-size: 4rem; position: relative; }
-  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tag {
-    position: absolute; top: 12px; left: 12px;
-    background: rgba(255,255,255,.92); color: var(--pink-800);
-    font-size: .75rem; font-weight: 700; padding: 4px 10px; border-radius: 999px;
-  }
-  .card-body { padding: 16px 18px 20px; }
-  .card-body h3 { font-size: 1.15rem; font-weight: 600; color: var(--ink); }
-  .card-body p { font-size: .9rem; color: var(--muted); }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-  /* placeholder backgrounds */
-  .bg-art   { background: linear-gradient(135deg, #ffd6e6, #ffeef4); }
-  .bg-craft { background: linear-gradient(135deg, #fbe9cf, #fff4e4); }
-  .bg-lego  { background: linear-gradient(135deg, #cdeff3, #eafafc); }
-  .bg-other { background: linear-gradient(135deg, #e9dcff, #f6f0ff); }
+    .meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
 
-  /* ---------- About ---------- */
-  .about { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center;
-    background: #fff; border-radius: 32px; padding: 44px; box-shadow: var(--shadow); }
-  .about .avatar { width: 240px; height: 240px; border-radius: 50%; background: var(--pink-100);
-    display: grid; place-items: center; margin: 0 auto; border: 6px solid var(--pink-200); }
-  .about .avatar svg { width: 72%; }
-  .about h2 { font-size: 2.2rem; color: var(--pink-800); font-weight: 600; }
-  .about p { color: var(--muted); margin-top: 10px; font-size: 1.05rem; }
-  .faves { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-  .faves span { background: var(--pink-50); border: 1px solid var(--pink-200); padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: .9rem; }
+    .week-badge {
+      background-color: var(--primary);
+      color: #FFF;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-  /* ---------- Footer ---------- */
-  footer { background: var(--sea-deep); color: #fff; text-align: center; padding: 0 0 36px; position: relative; }
-  footer .waves-top svg { display: block; width: 100%; height: 70px; }
-  footer p { opacity: .95; font-weight: 600; }
-  footer small { display: block; margin-top: 6px; opacity: .75; }
+    .date-badge {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      background: #FFF;
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
 
-  /* ---------- Lightbox ---------- */
-  .lightbox { position: fixed; inset: 0; background: rgba(74, 44, 58, .75); display: none; place-items: center; z-index: 50; padding: 24px; }
-  .lightbox.open { display: grid; }
-  .lightbox-inner { background: #fff; border-radius: 28px; max-width: 720px; width: 100%; overflow: hidden; animation: pop .25s ease; }
-  .lightbox .thumb { aspect-ratio: 4 / 3; font-size: 7rem; }
-  .lightbox .card-body { padding: 22px 26px 28px; }
-  .lightbox h3 { font-size: 1.6rem; }
-  .lightbox .date { color: var(--pink-600); font-weight: 700; font-size: .85rem; }
-  .close { position: absolute; top: 20px; right: 24px; background: #fff; border: 0; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; color: var(--pink-800); }
+    .series-tag {
+      background-color: var(--accent-light);
+      color: #8F6219;
+      border: 1px solid #EBD3A7;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
 
-  @media (max-width: 800px) {
-    nav ul { gap: 16px; font-size: .9rem; }
-    .hero { padding: 50px 0 130px; }
-    .hero .wrap { grid-template-columns: 1fr; text-align: center; }
-    .hero p { margin: 0 auto; }
-    .hero-art svg { max-width: 260px; }
-    .about { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
-    .faves { justify-content: center; }
-  }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-</style>
+    h1.main-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .scripture-header {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 頁籤導覽列 */
+    .tabs-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background-color: rgba(247, 245, 240, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      margin-bottom: 28px;
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 145px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background-color: var(--bg-card);
+      color: var(--text-muted);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(30, 63, 59, 0.2);
+    }
+
+    /* 分頁內容區塊 */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .section-heading {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      color: var(--primary);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* 控制工具列 */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--primary-light);
+      padding: 12px 18px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .toolbar-hint {
+      font-size: 0.88rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .btn-toggle-all {
+      background-color: var(--primary);
+      color: #FFF;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-toggle-all:hover {
+      background-color: #152E2B;
+    }
+
+    /* 內文段落排版 */
+    .article-body p {
+      margin-bottom: 1.4em;
+      text-indent: 2em;
+      font-size: 1.06rem;
+      color: #2B2F2D;
+    }
+
+    /* 互動填空樣式 */
+    .blank-slot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 96px;
+      padding: 1px 12px;
+      margin: 0 4px;
+      border-bottom: 2px solid var(--accent);
+      background-color: var(--accent-light);
+      border-radius: 6px 6px 2px 2px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #8A5A10;
+      transition: all 0.2s ease;
+      user-select: none;
+      vertical-align: baseline;
+      text-indent: 0;
+    }
+
+    .blank-slot:hover {
+      background-color: #F8E8C8;
+    }
+
+    .blank-slot .answer-text {
+      display: none;
+    }
+
+    .blank-slot .placeholder-text {
+      font-size: 0.85rem;
+      color: #B07D2B;
+      letter-spacing: 0.05em;
+    }
+
+    .blank-slot.revealed {
+      background-color: var(--primary);
+      border-bottom-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .blank-slot.revealed .answer-text {
+      display: inline;
+    }
+
+    .blank-slot.revealed .placeholder-text {
+      display: none;
+    }
+
+    /* 互動經文與神學泡泡觸發詞 */
+    .pop-trigger {
+      color: var(--primary);
+      font-weight: 700;
+      background-color: var(--primary-light);
+      padding: 1px 6px;
+      border-radius: 5px;
+      border-bottom: 1.5px dashed var(--primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-indent: 0;
+      display: inline;
+    }
+
+    .pop-trigger:hover {
+      background-color: #D5E5E1;
+      color: #102623;
+    }
+
+    /* 註釋與背景卡片樣式 */
+    .info-block {
+      background-color: #FAF9F6;
+      border-left: 4px solid var(--accent);
+      padding: 18px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 18px;
+    }
+
+    .info-block h3 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .citation-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: #6B5B3E;
+      background-color: #EFECE4;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .glossary-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      background-color: #FFFFFF;
+    }
+
+    .glossary-term {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .glossary-term span.hebrew-greek {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* 小組討論題目樣式 */
+    .question-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 18px;
+      background-color: #FFFFFF;
+      transition: border-color 0.2s;
+    }
+
+    .question-card:hover {
+      border-color: var(--accent);
+    }
+
+    .q-header {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .q-num {
+      background-color: var(--accent);
+      color: #FFF;
+      font-weight: 700;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .q-text {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .guide-toggle {
+      margin-top: 14px;
+      margin-left: 44px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .guide-toggle:hover {
+      background-color: var(--primary-light);
+    }
+
+    .guide-box {
+      display: none;
+      margin-top: 12px;
+      margin-left: 44px;
+      padding: 14px 16px;
+      background-color: var(--primary-light);
+      border-radius: 8px;
+      font-size: 0.94rem;
+      color: #243E3B;
+    }
+
+    .guide-box.open {
+      display: block;
+    }
+
+    /* 彈出泡泡視窗 (Popover / Modal) */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(20, 35, 33, 0.55);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .bubble-modal {
+      background-color: #FFFFFF;
+      max-width: 540px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 26px 28px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+      border-top: 6px solid var(--accent);
+      position: relative;
+      animation: popUp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes popUp {
+      from { opacity: 0; transform: scale(0.94) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .bubble-type {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .bubble-type.scripture {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .bubble-type.theology {
+      background-color: var(--accent-light);
+      color: #8F6219;
+    }
+
+    .bubble-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .bubble-content {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .bubble-source {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    .close-bubble {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background-color: #F2EFE9;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-bubble:hover {
+      background-color: var(--primary);
+      color: #FFF;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 22px 18px; }
+      h1.main-title { font-size: 1.55rem; }
+      .guide-toggle, .guide-box { margin-left: 0; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
-<nav>
-  <div class="wrap">
-    <a href="#" class="logo" aria-label="Hannah's Studio home">
-      <!-- little crown -->
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M6 28 L8 12 L15 20 L20 8 L25 20 L32 12 L34 28 Z" fill="#f6c453" stroke="#e0a82e" stroke-width="1.5" stroke-linejoin="round"/>
-        <rect x="6" y="28" width="28" height="5" rx="2" fill="#ff8fb8"/>
-        <circle cx="20" cy="8" r="2.5" fill="#ff8fb8"/><circle cx="8" cy="12" r="2" fill="#8fd8e0"/><circle cx="32" cy="12" r="2" fill="#8fd8e0"/>
-      </svg>
-      Hannah's Studio
-    </a>
-    <ul>
-      <li><a href="#gallery-section">Gallery</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <span class="sparkle" style="top:14%;left:6%">✦</span>
-  <span class="sparkle" style="top:30%;left:46%;animation-delay:1s">✦</span>
-  <span class="sparkle" style="top:10%;right:10%;animation-delay:2s">✦</span>
-
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">✿ Little artist · Big imagination</span>
-      <h1>Welcome to <span>Hannah's</span> Studio</h1>
-      <p>Drawings, crafts, LEGO castles and everything in between — a collection of things made with crayons, glue, bricks and lots of pink.</p>
-      <a href="#gallery-section" class="btn">See my creations →</a>
-    </div>
-
-    <!-- original kitty princess illustration -->
-    <div class="hero-art">
-      <svg class="float" viewBox="0 0 300 300" role="img" aria-label="A pink kitty wearing a crown">
-        <circle cx="150" cy="160" r="120" fill="#fff" opacity=".7"/>
-        <!-- ears -->
-        <path d="M78 120 L92 50 L135 95 Z" fill="#ffb3cf"/>
-        <path d="M222 120 L208 50 L165 95 Z" fill="#ffb3cf"/>
-        <path d="M92 108 L99 70 L122 96 Z" fill="#ff8fb8"/>
-        <path d="M208 108 L201 70 L178 96 Z" fill="#ff8fb8"/>
-        <!-- head -->
-        <ellipse cx="150" cy="160" rx="92" ry="80" fill="#ffc8dc"/>
-        <!-- crown -->
-        <path d="M112 82 L118 50 L134 68 L150 40 L166 68 L182 50 L188 82 Z" fill="#f6c453" stroke="#e0a82e" stroke-width="2" stroke-linejoin="round"/>
-        <circle cx="150" cy="40" r="5" fill="#8fd8e0"/>
-        <circle cx="118" cy="50" r="4" fill="#ff8fb8"/>
-        <circle cx="182" cy="50" r="4" fill="#ff8fb8"/>
-        <!-- eyes -->
-        <ellipse cx="118" cy="158" rx="11" ry="14" fill="#4a2c3a"/>
-        <ellipse cx="182" cy="158" rx="11" ry="14" fill="#4a2c3a"/>
-        <circle cx="122" cy="152" r="4" fill="#fff"/>
-        <circle cx="186" cy="152" r="4" fill="#fff"/>
-        <!-- cheeks -->
-        <ellipse cx="100" cy="185" rx="14" ry="8" fill="#ff8fb8" opacity=".6"/>
-        <ellipse cx="200" cy="185" rx="14" ry="8" fill="#ff8fb8" opacity=".6"/>
-        <!-- nose & mouth -->
-        <path d="M144 176 L156 176 L150 183 Z" fill="#e85a92"/>
-        <path d="M150 183 Q150 194 140 194 M150 183 Q150 194 160 194" stroke="#4a2c3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <!-- whiskers -->
-        <g stroke="#a8325f" stroke-width="2" stroke-linecap="round" opacity=".5">
-          <line x1="62" y1="170" x2="96" y2="174"/><line x1="64" y1="188" x2="96" y2="184"/>
-          <line x1="238" y1="170" x2="204" y2="174"/><line x1="236" y1="188" x2="204" y2="184"/>
-        </g>
-        <!-- seashell -->
-        <g transform="translate(222 228) rotate(15)">
-          <path d="M0 0 Q20 -30 40 0 Z" fill="#fbe9cf" stroke="#e8c79a" stroke-width="2"/>
-          <path d="M20 0 L20 -20 M10 0 L14 -18 M30 0 L26 -18" stroke="#e8c79a" stroke-width="2"/>
-        </g>
-      </svg>
-    </div>
+  <!-- 頂部教會識別列 -->
+  <div class="top-bar">
+    <span class="brand">CHANGE LIFE 卓越北大行道會｜小組教材</span>
+    <span>牧養月刊 2026 年 11 月號</span>
   </div>
 
-  <div class="waves" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,60 C240,110 480,10 720,50 C960,90 1200,20 1440,60 L1440,120 L0,120 Z" fill="#bfeaef"/>
-      <path d="M0,80 C260,40 520,120 760,80 C1000,40 1220,110 1440,80 L1440,120 L0,120 Z" fill="#e9f8fa"/>
-    </svg>
-  </div>
-</header>
-
-<!-- ============ GALLERY ============ -->
-<section id="gallery-section">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>My Gallery</h2>
-      <p>Tap any picture to see it bigger!</p>
-    </div>
-    <div class="filters" role="tablist">
-      <button class="chip active" data-filter="all">✨ All</button>
-      <button class="chip" data-filter="art">🎨 Art</button>
-      <button class="chip" data-filter="craft">✂️ Crafts</button>
-      <button class="chip" data-filter="lego">🧱 LEGO</button>
-      <button class="chip" data-filter="other">💖 Other</button>
-    </div>
-    <div class="gallery" id="gallery"></div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="avatar">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M22 40 L28 12 L44 30 Z" fill="#ffb3cf"/><path d="M78 40 L72 12 L56 30 Z" fill="#ffb3cf"/>
-          <ellipse cx="50" cy="56" rx="34" ry="30" fill="#ffc8dc"/>
-          <ellipse cx="38" cy="54" rx="4" ry="5" fill="#4a2c3a"/><ellipse cx="62" cy="54" rx="4" ry="5" fill="#4a2c3a"/>
-          <path d="M46 64 L54 64 L50 68 Z" fill="#e85a92"/>
-          <ellipse cx="30" cy="66" rx="6" ry="3" fill="#ff8fb8" opacity=".6"/><ellipse cx="70" cy="66" rx="6" ry="3" fill="#ff8fb8" opacity=".6"/>
-        </svg>
+  <!-- 課程標頭 -->
+  <header class="hero">
+    <div class="container">
+      <div class="meta-badges">
+        <span class="week-badge">WEEK 2</span>
+        <span class="date-badge">11/10 — 11/15</span>
+        <span class="series-tag">信心 ④</span>
       </div>
-      <div>
-        <h2>Hi, I'm Hannah! 👋</h2>
-        <p>I'm 8 years old and I love to make things. I draw princesses and kitties, build LEGO castles by the sea, and make crafts out of paper, beads and anything sparkly. This is where my mom and dad keep all my favourite projects.</p>
-        <div class="faves">
-          <span>👑 Princesses</span>
-          <span>🐱 Kitties</span>
-          <span>🏖️ The beach</span>
-          <span>💗 Pink!</span>
-          <span>🧱 LEGO</span>
+      <h1 class="main-title">亞伯拉罕的信心（下）</h1>
+      <div class="scripture-header">
+        <span>📖 主題經文：</span>
+        <span class="pop-trigger" data-pop="heb11_17_19">希伯來書 11:17-19</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 四大頁籤導覽 -->
+  <div class="tabs-wrapper">
+    <div class="container">
+      <nav class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="tab-bg">1. 教材背景與經文導讀</button>
+        <button class="tab-btn" data-tab="tab-info">2. 信息內容（互動填空）</button>
+        <button class="tab-btn" data-tab="tab-notes">3. 註釋與難字解析</button>
+        <button class="tab-btn" data-tab="tab-discuss">4. 小組問題與討論</button>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- 頁籤 1：教材背景與經文導讀 -->
+    <section id="tab-bg" class="tab-panel active">
+      <div class="card">
+        <h2 class="section-heading">📚 經文歷史與神學背景</h2>
+        
+        <div class="info-block">
+          <h3>一、《希伯來書》第十一章的寫作背景與目的</h3>
+          <p>《希伯來書》寫作於主後 60 年代末期（約主後 64–68 年，耶路撒冷聖殿尚未被毀前），收信人是一群面臨羅馬帝國逼迫與猶太教親友排擠的猶太裔基督徒。部分信徒因苦難而動搖，甚至考慮退回傳統猶太教禮儀以求自保。作者在第十一章列舉舊約「信心偉人榜」，核心目的在於證明：真正的信心不是逃避苦難，而是在看不見結局時，依然信靠神的應許與復活大能。</p>
+          <span class="citation-tag">📖 參考出處：布魯斯（F. F. Bruce），《丁道爾新約聖經註釋：希伯來書》（校園書房出版社）</span>
+        </div>
+
+        <div class="info-block">
+          <h3>二、亞伯拉罕獻以撒（創世記 22 章）的神學張力</h3>
+          <p>在《創世記》12 至 21 章中，神多次向亞伯拉罕起誓，應許他的後裔必「從以撒生的才要稱為你的後裔」（創 21:12）。然而，就在應許之子以撒平安長大、亞伯拉罕與外邦王亞比米勒立約、生命進入最安穩的階段時，神卻命令他將獨生子獻為燔祭。這構成了舊約中最劇烈的神學張力：<strong>「神的命令」似乎與「神的應許」直接衝突</strong>。亞伯拉罕之所以能順服，是因為他深信神是使死人復活的神（來 11:19）。</p>
+          <span class="citation-tag">📖 參考出處：華爾頓（John H. Walton），《NIV 國際聖經背景註釋：創世記》（漢語聖經協會）</span>
+        </div>
+
+        <div class="info-block">
+          <h3>三、摩利亞山與救贖歷史的預表</h3>
+          <p>亞伯拉罕獻以撒的地點「摩利亞地」，在舊約歷史中具有極深遠的救贖意義。《歷代志下》3:1 明確指出，所羅門王建造耶路撒冷聖殿的地點正是「耶和華向他父大衛顯現的摩利亞山上」。神當年為亞伯拉罕預備公羊代替以撒，預表了兩千年後，天父在同一個山嶺地區（各各他）沒有愛惜自己的獨生愛子耶穌基督，為世人作了挽回祭（羅 8:32）。</p>
+          <span class="citation-tag">📖 參考出處：高銘謙，《天道聖經註釋：創世記（卷下）》（天道書樓）；麥克阿瑟（John MacArthur），《麥克阿瑟新約註釋：希伯來書》</span>
         </div>
       </div>
+    </section>
+
+    <!-- 頁籤 2：信息內容（含互動填空與經文/神學泡泡） -->
+    <section id="tab-info" class="tab-panel">
+      <div class="card">
+        <div class="section-heading">
+          <span>✍️ 信息內文與互動填空</span>
+        </div>
+
+        <div class="toolbar">
+          <span class="toolbar-hint">💡 提示：點擊<strong>金色空格</strong>可顯示／隱藏解答；點擊<strong>底線標籤</strong>可查看經文與神學泡泡。</span>
+          <button class="btn-toggle-all" id="toggleAllBtn">顯示全部解答</button>
+        </div>
+
+        <div class="article-body">
+          <p>
+            今天要來分享亞伯拉罕的信心。我們先複習一下，什麼是亞伯拉罕的信心？第一個是<span class="pop-trigger" data-pop="call_faith">對呼召的信心</span>，去哪裡不是重要的，重要的是你的呼召。第二個是<span class="pop-trigger" data-pop="promise_faith">對應許的信心</span>，在毫無指望的時候，因信仍有指望，神蹟就發生了。第三個是<span class="pop-trigger" data-pop="death_faith">超越死亡的信心</span>，即使神的應許沒有在今生完全實現，但有一個信心是存著信心死，在將來的日子神必定會成就。今天要看的是，亞伯拉罕的信心是<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">勝過試驗</span></span>的信心。
+          </p>
+
+          <p>
+            聖經很清楚地告訴我們，信心需要被<span class="pop-trigger" data-pop="testing_vs_temptation">試驗</span>，通過考試才能看見信心是真的還是假的。聖經最清楚的例證，就是亞伯拉罕獻上以撒（<span class="pop-trigger" data-pop="gen22_1_2">創 22:1-2</span>）。經文提到「這些事以後」，也就是以撒生了，並且夏甲、非利士人的爭論也解決，到了亞伯拉罕人生風平浪靜、最幸福的時刻之後，神的試驗就來了。很多時候試驗會在一切非常美好的時候臨到，上帝要看看你還信不信靠神。神向亞伯拉罕說，帶著你的兒子，你<span class="pop-trigger" data-pop="only_son">獨生的兒子</span>，你所愛的以撒，強調了三次最愛的以撒，因為祂知道亞伯拉罕唯一放不下的就是以撒。既然是試驗，必定感到痛苦和掙扎，上帝考試的題目可能是你心中最在乎的，包括妻子、錢或工作。不過，試驗是按著<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">信心</span></span>的程度，試驗的目的不是要摧毀，而是要使你對神更有信心。隨著信心的成長，神對你的試驗強度也會更大。
+          </p>
+
+          <p>
+            在這當中有兩段經文很重要。第一段經文是「你們所遇見的試探，無非是人所能受的。神是信實的，必不叫你們受試探過於所能受的；在受試探的時候，總要給你們開一條出路，叫你們能忍受得住。」（<span class="pop-trigger" data-pop="cor10_13">林前 10:13</span>）上帝給的試驗一定是你信心可以承受的，當你快承受不住的時候，神一定會給你開一條出路。遇見挫折壓力時，要挺住，因為夜最深的時候，往往就是神要給你<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">開一條出路</span></span>的時候。第二段經文是「叫你們的信心既被試驗，就比那被火試驗仍然能壞的金子更顯寶貴，可以在耶穌基督顯現的時候得著稱讚、榮耀、尊貴。」（<span class="pop-trigger" data-pop="pet1_7">彼前 1:7</span>）開採出來的金礦要用火煉淨雜質，就變成純金。上帝把我們放在火爐裡，把自私、爭競、比較、嫉妒和虛假都燒光，剩下對神非常單純的信心。如果你遭遇一些別人遇不見的苦難，不要稀奇，因為神選中你了，祂要讓你的生命經過這些<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">試煉</span></span>，使你比精金更寶貴，綻放出從神來的光輝與價值。
+          </p>
+
+          <p>
+            亞伯拉罕清早起來，備上驢，帶著兩個僕人和他兒子以撒，也劈好了燔祭的柴，就起身往神所指示他的地方去了（<span class="pop-trigger" data-pop="gen22_3">創 22:3</span>）。亞伯拉罕沒有猶豫，他清早起來就起身走了。亞伯拉罕正面積極，憑著信心獻上以撒，因為他相信神的應許，既然是神向他說話，他就歡喜領受。亞伯拉罕不明白為什麼神現在要收回以撒，但他願意用信心<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">接受</span></span>神量給他生命的每一個處境，用信心順服，相信神必有祂美好的旨意。在亞伯拉罕伸手拿刀要殺他兒子的最後一刻，天使出現了，要亞伯拉罕停手。現在神知道亞伯拉罕是敬畏神的，他沒有留下獨生兒子不給神（<span class="pop-trigger" data-pop="gen22_11_12">創 22:11-12</span>）。這時候有個美麗的字叫做「<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">不料</span></span>」，神預備代替獻祭的公羊就扣在樹上。當我們順服到底，就在神的祭壇遇見沒想到的人，看見神的預備（<span class="pop-trigger" data-pop="gen22_13_14">創 22:13-14</span>）。信心的行動就是順服，不要因為挫折打擊就放棄異象，當我們堅持到底，就看見神奇妙的預備。
+          </p>
+
+          <p>
+            亞伯拉罕通過信心的畢業考，神重新肯定給他的祝福，而且擴大範圍。「你子孫必得著仇敵的城門；並且地上萬國都必因你的後裔得福」（<span class="pop-trigger" data-pop="gen22_15_18">創 22:15-18</span>），因為他聽從神的話！這裡的子孫更是指你的屬靈子孫、信心的後裔。當小組長<span class="blank-slot" role="button" tabindex="0"><span class="placeholder-text">點擊看解答</span><span class="answer-text">順服</span></span>，萬國會因小組得福；當主任牧師順服，教會就會蒙福，成為祝福萬國的教會。試驗是為了讓你的信心更純淨、強度更大，以至於可以承擔更大重量的祝福。信心通過試驗，得到神信任的人，神必定照著應許祝福他和他的後裔。
+          </p>
+
+          <p>
+            不論你現在處境如何，或許你正面臨信心的試驗，神要你獻上你生命中的以撒，可能是工作、金錢，或者是交往很久不信主的弟兄，讓我們憑著信心聽神的話，或許不能理解，但我們願意接受神的安排，歡喜領受。快要承受不住的時候，神必定給我們開出一條路來；當我們順服到底，就會看到生命中想像不到的美好。讓我們即使痛苦掙扎，也願意把生命獻上，沒有什麼能夠攔阻我們走向神。神必照應許祝福他和他信心的後裔！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 頁籤 3：註釋與難字解析 -->
+    <section id="tab-notes" class="tab-panel">
+      <div class="card">
+        <h2 class="section-heading">🔍 經文註釋與難字解析</h2>
+        <div class="glossary-grid">
+
+          <div class="glossary-item">
+            <div class="glossary-term">
+              1. 「試驗」與「試探」的區別
+              <span class="hebrew-greek">希伯來文 נָסָה (nasah) / 希臘文 πειράζω (peirazō)</span>
+            </div>
+            <p>中文和合本在《創世記》22:1 譯作「神要<strong>試驗</strong>亞伯拉罕」，在《哥林多前書》10:13 則譯作「<strong>試探</strong>」。原文同一個字根具備雙重含義，取決於發出者的動機：<strong>撒但的「試探」</strong>目的是引誘人犯罪、使人跌倒毀滅；<strong>神的「試驗」</strong>（如冶煉金銀）目的是檢驗信心的真偽、煉淨雜質，使人更加成熟剛強（雅 1:13-14 明確指出神不試探人惡事）。</p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">
+              2. 「獨生的兒子」
+              <span class="hebrew-greek">希伯來文 יָחִיד (yachid) / 希臘文 μονογενής (monogenēs)</span>
+            </div>
+            <p>亞伯拉罕其實還有長子以實瑪利，但聖經在創 22:2 與來 11:17 都稱以撒為「獨生子」。這個詞在聖經神學中不僅指數量上的唯一，更強調<strong>「無可取代的摯愛與唯一合法的應許繼承人」</strong>。新約《約翰福音》3:16 也用同一個希臘字 <em>monogenēs</em> 形容耶穌是天父的「獨生子」。</p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">
+              3. 「燔祭」
+              <span class="hebrew-greek">希伯來文 עֹלָה (olah)</span>
+            </div>
+            <p>字面意思是「上升之物」。與平安祭或贖罪祭不同，燔祭要求祭牲必須<strong>全部在祭壇上焚燒</strong>，化為馨香之氣上升歸給神，獻祭者不能保留任何一塊肉自己享用。這象徵「完全的委身、毫無保留的獻上」。</p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">
+              4. 「不料」與「耶和華以勒」
+              <span class="hebrew-greek">希伯來文 הִנֵּה (hinneh) / יְהוָה יִרְאֶה (YHWH Yireh)</span>
+            </div>
+            <p>創 22:13 的「不料」（原文 <em>hinneh</em>，意為「看哪！」）在希伯來敘事中用來表達<strong>戲劇性的神聖轉折</strong>——在人的盡頭，神早已預備好了替代的公羊。隨後亞伯拉罕給那地方起名叫「耶和華以勒」，原意是「耶和華必看見」，引申為「在耶和華的山上必有預備」——因為神看見人的需要，便親自供應。</p>
+          </div>
+
+          <div class="glossary-item">
+            <div class="glossary-term">
+              5. 「得著仇敵的城門」
+              <span class="hebrew-greek">創世記 22:17</span>
+            </div>
+            <p>在古代近東城市結構中，「城門」是全城防禦最堅固的軍事要塞，也是長老審判、商業交易與政權運作的行政中心。「得著仇敵的城門」意味著<strong>徹底攻克敵人的權勢、掌握主導權與得勝的地位</strong>。在新約中，耶穌也應許教會「陰間的權柄（原文：城門）不能勝過她」（太 16:18）。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 頁籤 4：小組問題與討論 -->
+    <section id="tab-discuss" class="tab-panel">
+      <div class="card">
+        <h2 class="section-heading">💬 小組分享與討論</h2>
+
+        <div class="question-card">
+          <div class="q-header">
+            <div class="q-num">1</div>
+            <div class="q-text">上帝是在亞伯拉罕人生的什麼時刻給予他這次試驗？上帝要求他獻上什麼？</div>
+          </div>
+          <button class="guide-toggle" onclick="toggleGuide(this)">💡 展開觀察重點與帶領方向</button>
+          <div class="guide-box">
+            <strong>觀察重點：</strong>在「這些事以後」（創 22:1）——也就是等了25年終於生下以撒、家庭紛爭（夏甲與以實瑪利）解決、與外邦和平立約，人生最風平浪靜、最幸福安穩的時刻。上帝要求他獻上「你獨生的兒子，你所愛的以撒」，這代表亞伯拉罕生命中最珍貴、最放不下的心頭肉，也是他未來一切盼望的寄託。
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="q-header">
+            <div class="q-num">2</div>
+            <div class="q-text">「火煉金子」說明神試驗我們信心的最終目的是什麼？能留下什麼？你個人曾經經歷哪些試驗？</div>
+          </div>
+          <button class="guide-toggle" onclick="toggleGuide(this)">💡 展開觀察重點與帶領方向</button>
+          <div class="guide-box">
+            <strong>帶領方向：</strong>參考彼得前書 1:7，火煉的目的不是要毀滅金子，而是要<strong>燒去雜質</strong>（自私、爭競、比較、嫉妒、虛假與對人的倚靠），最終留下「對神非常單純的信心」，使生命在基督顯現時得著稱讚與榮耀。鼓勵組員分享過去在環境壓力或低谷中，生命雜質被煉淨的真實見證。
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="q-header">
+            <div class="q-num">3</div>
+            <div class="q-text">亞伯拉罕清早毫不猶豫出發，這種不明白卻願意順服的態度，對你的學習是什麼？過去的經歷中，是否曾遇過當你堅持到底，發現神的恩典已經為你預備了一條出路？請試著分享。</div>
+          </div>
+          <button class="guide-toggle" onclick="toggleGuide(this)">💡 展開觀察重點與帶領方向</button>
+          <div class="guide-box">
+            <strong>帶領方向：</strong>真正的順服往往不是「完全想通了才行動」，而是「雖然不明白為什麼，但因為認識神是信實美善的，所以選擇立刻行動」。可引導組員回想生命中那些「夜最深的時候」，神如何像在摩利亞山預備公羊一樣，在最後一刻出現「不料」的轉機與出路（林前 10:13）。
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="q-header">
+            <div class="q-num">4</div>
+            <div class="q-text">亞伯拉罕的順服讓祝福範圍擴大到別人身上。你現在的處境，什麼可能是你生命中最放不下、神卻要你獻上的以撒（例如：工作、時間、金錢、關係、未來的掌控）？請分享，我們可以如何為你禱告？</div>
+          </div>
+          <button class="guide-toggle" onclick="toggleGuide(this)">💡 展開觀察重點與帶領方向</button>
+          <div class="guide-box">
+            <strong>牧養與禱告提醒：</strong>這一題是整課的核心應用。小組長可先以身作則真誠分享自己的「以撒」，營造安全、不批判的氛圍。提醒組員：神要我們獻上以撒，不是為了剝奪我們的幸福，而是要我們不再把「祝福」當成偶像，好讓神能把更大的祝福（成為萬國的祝福）託付給我們。分享後請小組兩兩或圍圈為彼此按手禱告。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CHANGE LIFE CHURCH 卓越北大行道會｜小組牧養教材互動版</p>
+  </footer>
+
+  <!-- 經文與神學解析泡泡視窗 -->
+  <div class="modal-backdrop" id="bubbleModal">
+    <div class="bubble-modal" role="dialog" aria-modal="true">
+      <button class="close-bubble" id="closeBubbleBtn" aria-label="關閉">×</button>
+      <span class="bubble-type" id="bubbleType">經文出處</span>
+      <h3 class="bubble-title" id="bubbleTitle">標題</h3>
+      <div class="bubble-content" id="bubbleContent">內容</div>
+      <div class="bubble-source" id="bubbleSource">出處說明</div>
     </div>
   </div>
-</section>
 
-<!-- ============ FOOTER ============ -->
-<footer>
-  <div class="waves-top" aria-hidden="true">
-    <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
-      <path d="M0,0 L1440,0 L1440,30 C1200,70 960,0 720,30 C480,60 240,0 0,30 Z" fill="#fff5f8"/>
-    </svg>
-  </div>
-  <p>Made with love, glitter & crayons 🐚</p>
-  <small>© <span id="year"></span> Hannah's Studio</small>
-</footer>
+  <script>
+    // 1. 頁籤切換功能
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
 
-<!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="close" id="close" aria-label="Close">×</button>
-  <div class="lightbox-inner" id="lightbox-content"></div>
-</div>
-
-<script>
-/* =============================================================
-   HOW TO ADD A NEW PROJECT
-   1. Put the photo in an "images" folder next to this file.
-   2. Add an entry to the list below, e.g.
-      { title: "Mermaid Castle", category: "lego",
-        date: "2026-11", image: "images/mermaid-castle.jpg",
-        note: "Built on a rainy Saturday!" },
-   category can be: "art", "craft", "lego" or "other".
-   Entries without an image show a cute placeholder.
-   ============================================================= */
-const projects = [
-  { title: "Princess Kitty Portrait", category: "art",   date: "2026-11", emoji: "👑", note: "Crayons and glitter glue." },
-  { title: "Seashell Castle",         category: "lego",  date: "2026-10", emoji: "🏰", note: "A LEGO castle right on the beach." },
-  { title: "Paper Plate Fish",        category: "craft", date: "2026-10", emoji: "🐠", note: "Made at the kitchen table." },
-  { title: "Sunset at the Beach",     category: "art",   date: "2026-09", emoji: "🌅", note: "Watercolours — pink sky!" },
-  { title: "Beaded Bracelet",         category: "craft", date: "2026-09", emoji: "📿", note: "A gift for Grandma." },
-  { title: "Kitty Café",              category: "lego",  date: "2026-08", emoji: "🐱", note: "With a tiny cupcake counter." },
-  { title: "Rainbow Unicorn",         category: "art",   date: "2026-08", emoji: "🦄", note: "Markers on cardstock." },
-  { title: "Clay Cupcakes",           category: "other", date: "2026-07", emoji: "🧁", note: "Air-dry clay, painted pink." },
-];
-
-const labels = { art: "Art", craft: "Craft", lego: "LEGO", other: "Other" };
-const gallery = document.getElementById("gallery");
-const lightbox = document.getElementById("lightbox");
-const lbContent = document.getElementById("lightbox-content");
-
-function thumbHTML(p, withTag = true) {
-  const inner = p.image
-    ? `<img src="${p.image}" alt="${p.title}" loading="lazy">`
-    : `<span aria-hidden="true">${p.emoji || "✨"}</span>`;
-  return `<div class="thumb bg-${p.category}">${inner}${withTag ? `<span class="tag">${labels[p.category]}</span>` : ""}</div>`;
-}
-
-function formatDate(d) {
-  if (!d) return "";
-  const [y, m] = d.split("-");
-  return new Date(y, (m || 1) - 1).toLocaleDateString(undefined, { month: "long", year: "numeric" });
-}
-
-function render(filter = "all") {
-  gallery.innerHTML = "";
-  projects
-    .filter(p => filter === "all" || p.category === filter)
-    .forEach((p, i) => {
-      const card = document.createElement("article");
-      card.className = "card";
-      card.style.animationDelay = `${i * 50}ms`;
-      card.tabIndex = 0;
-      card.innerHTML = `${thumbHTML(p)}<div class="card-body"><h3>${p.title}</h3><p>${formatDate(p.date)}</p></div>`;
-      card.addEventListener("click", () => open(p));
-      card.addEventListener("keydown", e => { if (e.key === "Enter") open(p); });
-      gallery.appendChild(card);
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
     });
-}
 
-function open(p) {
-  lbContent.innerHTML = `${thumbHTML(p, false)}<div class="card-body"><span class="date">${labels[p.category]} · ${formatDate(p.date)}</span><h3>${p.title}</h3><p>${p.note || ""}</p></div>`;
-  lightbox.classList.add("open");
-  lightbox.setAttribute("aria-hidden", "false");
-}
-function close() { lightbox.classList.remove("open"); lightbox.setAttribute("aria-hidden", "true"); }
+    // 2. 填空題點擊顯示／隱藏功能
+    const blankSlots = document.querySelectorAll('.blank-slot');
+    const toggleAllBtn = document.getElementById('toggleAllBtn');
+    let allRevealed = false;
 
-document.getElementById("close").addEventListener("click", close);
-lightbox.addEventListener("click", e => { if (e.target === lightbox) close(); });
-document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+    blankSlots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        slot.classList.toggle('revealed');
+        updateToggleAllBtnState();
+      });
+      slot.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          slot.classList.toggle('revealed');
+          updateToggleAllBtnState();
+        }
+      });
+    });
 
-document.querySelectorAll(".chip").forEach(chip => {
-  chip.addEventListener("click", () => {
-    document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
-    chip.classList.add("active");
-    render(chip.dataset.filter);
-  });
-});
+    toggleAllBtn.addEventListener('click', () => {
+      allRevealed = !allRevealed;
+      blankSlots.forEach(slot => {
+        if (allRevealed) {
+          slot.classList.add('revealed');
+        } else {
+          slot.classList.remove('revealed');
+        }
+      });
+      toggleAllBtn.textContent = allRevealed ? '隱藏全部解答' : '顯示全部解答';
+    });
 
-document.getElementById("year").textContent = new Date().getFullYear();
-render();
-</script>
+    function updateToggleAllBtnState() {
+      const revealedCount = document.querySelectorAll('.blank-slot.revealed').length;
+      if (revealedCount === blankSlots.length) {
+        allRevealed = true;
+        toggleAllBtn.textContent = '隱藏全部解答';
+      } else if (revealedCount === 0) {
+        allRevealed = false;
+        toggleAllBtn.textContent = '顯示全部解答';
+      }
+    }
+
+    // 3. 小組問題帶領指引展開/收合
+    function toggleGuide(btn) {
+      const box = btn.nextElementSibling;
+      box.classList.toggle('open');
+      btn.textContent = box.classList.contains('open')
+        ? '🔼 收合觀察重點與帶領方向'
+        : '💡 展開觀察重點與帶領方向';
+    }
+
+    // 4. 經文與神學泡泡資料庫
+    const bubbleData = {
+      heb11_17_19: {
+        type: 'scripture',
+        typeLabel: '📖 主題經文｜和合本',
+        title: '希伯來書 11:17-19',
+        content: '「17 亞伯拉罕因著信，被試驗的時候，就把以撒獻上；這便是那歡喜領受應許的，將自己獨生的兒子獻上。18 論到這兒子，曾有話說：『從以撒生的才要稱為你的後裔。』19 他以為神還能叫人從死裡復活；他也彷彿從死中得回他的兒子來。」',
+        source: '神學洞見：在亞伯拉罕之前，聖經從未記載過死人復活的先例；亞伯拉罕是憑著對神全能與信實的認識，推論出神必叫以撒復活。'
+      },
+      call_faith: {
+        type: 'theology',
+        typeLabel: '✝️ 神學概念｜對呼召的信心',
+        title: '創世記 12:1-4 / 希伯來書 11:8',
+        content: '「亞伯拉罕因著信，蒙召的時候就遵命出去，往將來要得為業的地方去；出去的時候，還不知往哪裡去。」真正的信心不是先看清地圖才出發，而是因為信任帶領者，便勇敢踏出舒適圈。',
+        source: '回顧系列信息：《信心（一）》'
+      },
+      promise_faith: {
+        type: 'theology',
+        typeLabel: '✝️ 神學概念｜對應許的信心',
+        title: '羅馬書 4:18-21 / 希伯來書 11:11-12',
+        content: '「他在無可指望的時候，因信仍有指望，就得以作多國的父……且滿心相信神所應許的必能做成。」當身體如同已死、環境完全不可能時，信心單單抓緊神的話語。',
+        source: '回顧系列信息：《信心（二）》'
+      },
+      death_faith: {
+        type: 'theology',
+        typeLabel: '✝️ 神學概念｜超越死亡的信心',
+        title: '希伯來書 11:13-16',
+        content: '「這些人都是存著信心死的，並沒有得著所應許的；卻從遠處望見，且歡喜迎接，又承認自己在世上是客旅，是寄居的。」信心超越今生短暫的得失，望見神在永恆中預備更美的家鄉。',
+        source: '回顧系列信息：《信心（三）》'
+      },
+      testing_vs_temptation: {
+        type: 'theology',
+        typeLabel: '🔍 聖經神學｜試驗（Testing）',
+        title: '神為什麼要試驗人？',
+        content: '神是全知的，祂試驗亞伯拉罕不是因為神不知道亞伯拉罕的內心，而是為了讓亞伯拉罕自己以及世世代代的信徒，透過實際行動「看見並確認」這份信心的真實與純度（申命記 8:2）。',
+        source: '參考：丁道爾舊約聖經註釋《創世記》'
+      },
+      gen22_1_2: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '創世記 22:1-2',
+        content: '「1 這些事以後，神要試驗亞伯拉罕，就呼叫他說：『亞伯拉罕！』他說：『我在這裡。』2 神說：『你帶著你的兒子，就是你獨生的兒子，你所愛的以撒，往摩利亞地去，在我所要指示你的山上，把他獻為燔祭。』」',
+        source: '經文細節：原文連用三個遞進稱呼「你的兒子 → 獨生的兒子 → 你所愛的以撒」，層層觸動父親最深的情感。'
+      },
+      only_son: {
+        type: 'theology',
+        typeLabel: '✝️ 救贖預表｜獨生的愛子',
+        title: '以撒與基督的預表關係',
+        content: '以撒背負燔祭的木柴走上摩利亞山（創 22:6），順服年邁父親的捆綁；這正是耶穌基督背負十字架走上各各他山坡（約 19:17）、順服天父旨意直至受死的鮮明預表。',
+        source: '參考：麥克阿瑟新約註釋《希伯來書》'
+      },
+      cor10_13: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '哥林多前書 10:13',
+        content: '「你們所遇見的試探，無非是人所能受的。神是信實的，必不叫你們受試探過於所能受的；在受試探的時候，總要給你們開一條出路，叫你們能忍受得住。」',
+        source: '神學應許：神是環境的掌管者，祂為每一個試煉設定了上限，並同時預備了「承受的力量」與「出路」。'
+      },
+      pet1_7: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '彼得前書 1:7',
+        content: '「叫你們的信心既被試驗，就比那被火試驗仍然能壞的金子更顯寶貴，可以在耶穌基督顯現的時候得著稱讚、榮耀、尊貴。」',
+        source: '經文意象：連世人最看重的純金在末日都會毀壞，但經過苦難火煉的信心卻具有永恆的價值。'
+      },
+      gen22_3: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '創世記 22:3',
+        content: '「亞伯拉罕清早起來，備上驢，帶著兩個僕人和他兒子以撒，也劈好了燔祭的柴，就起身往神所指示他的地方去了。」',
+        source: '行動詮釋：「清早起來」顯示他沒有拖延、沒有與人商量妥協，而是立刻以行動回應神的命令。'
+      },
+      gen22_11_12: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '創世記 22:11-12',
+        content: '「11 耶和華的使者從天上呼叫他說：『亞伯拉罕！亞伯拉罕！』他說：『我在這裡。』12 天使說：『你不可在這童子身上下手。一點不可害他！現在我知道你是敬畏神的了；因為你沒有將你的兒子，就是你獨生的兒子，留下不給我。』」',
+        source: '神學核心：「敬畏神」在聖經中不是恐懼退縮，而是把神放在一切所愛之上。'
+      },
+      gen22_13_14: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '創世記 22:13-14',
+        content: '「13 亞伯拉罕舉目觀看，不料，有一只公羊，兩角扣在稠密的小樹中，亞伯拉罕就取了那只公羊來，獻為燔祭，代替他的兒子。14 亞伯拉罕給那地方起名叫『耶和華以勒』（就是耶和華必預備的意思），直到今日人還說：『在耶和華的山上必有預備。』」',
+        source: '關鍵字詞：「代替」一詞確立了舊約代贖祭祀的核心原則——無辜的祭牲代替應許之子受死。'
+      },
+      gen22_15_18: {
+        type: 'scripture',
+        typeLabel: '📖 相關經文｜和合本',
+        title: '創世記 22:15-18',
+        content: '「15 耶和華的使者第二次從天上呼叫亞伯拉罕說：16『耶和華說：你既行了這事，不留下你的兒子，就是你獨生的兒子，我便指著自己起誓說：17 論福，我必賜大福給你；論子孫，我必叫你的子孫多起來，如同天上的星，海邊的沙。你子孫必得著仇敵的城門，18 並且地上萬國都必因你的後裔得福，因為你聽從了我的話。』」',
+        source: '聖約高峰：這是神在創世記中唯一一次「指著自己起誓」堅立對亞伯拉罕的祝福（參希伯來書 6:13-14）。'
+      }
+    };
+
+    const modal = document.getElementById('bubbleModal');
+    const closeBtn = document.getElementById('closeBubbleBtn');
+    const bubbleType = document.getElementById('bubbleType');
+    const bubbleTitle = document.getElementById('bubbleTitle');
+    const bubbleContent = document.getElementById('bubbleContent');
+    const bubbleSource = document.getElementById('bubbleSource');
+
+    document.querySelectorAll('.pop-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const key = trigger.dataset.pop;
+        const data = bubbleData[key];
+        if (!data) return;
+
+        bubbleType.textContent = data.typeLabel;
+        bubbleType.className = 'bubble-type ' + data.type;
+        bubbleTitle.textContent = data.title;
+        bubbleContent.textContent = data.content;
+        bubbleSource.textContent = data.source;
+        modal.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
