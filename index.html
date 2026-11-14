@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>江子翠行道會｜小組教材：亞伯拉罕的信心（下）</title>
 
-  <!-- PWA & 桌面捷徑圖示設定（加上 ?v=3 強制更新舊圖示快取） -->
+  <!-- PWA & 桌面捷徑圖示設定 -->
   <meta name="theme-color" content="#007F85">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -24,6 +24,12 @@
       --brand-primary-tint: rgba(0, 127, 133, 0.10);
       --brand-primary-tint-hover: rgba(0, 127, 133, 0.17);
       --brand-primary-border: rgba(0, 127, 133, 0.35);
+
+      /* 互動填空專用淡黃色系（與經文備註標籤區隔） */
+      --blank-bg: #FEF6DC;
+      --blank-bg-hover: #FDECB8;
+      --blank-border: #D9A736;
+      --blank-text: #7A5408;
 
       /* Apple 官網與 iOS 介面中性色階 */
       --bg-page: #F5F5F7;
@@ -130,7 +136,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* 安裝成 App 按鈕（僅在未安裝狀態下顯示，從桌面 App 開啟或安裝完成時自動隱藏） */
+    /* 安裝成 App 按鈕 */
     .install-btn {
       display: none;
       align-items: center;
@@ -363,7 +369,7 @@
       margin-bottom: 0;
     }
 
-    /* 互動填空膠囊 */
+    /* 互動填空膠囊（淡黃色底，與湖水藍綠備註區分） */
     .blank-slot {
       display: inline-flex;
       align-items: center;
@@ -371,19 +377,19 @@
       min-width: 94px;
       padding: 2px 12px;
       margin: 0 3px;
-      background-color: var(--brand-primary-tint);
-      border: 1.5px dashed var(--brand-primary-border);
+      background-color: var(--blank-bg);
+      border: 1.5px dashed var(--blank-border);
       border-radius: 9px;
       cursor: pointer;
       font-weight: 600;
-      color: var(--brand-primary);
+      color: var(--blank-text);
       transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
       user-select: none;
       vertical-align: baseline;
     }
 
     .blank-slot:hover {
-      background-color: var(--brand-primary-tint-hover);
+      background-color: var(--blank-bg-hover);
     }
 
     .blank-slot:active {
@@ -414,7 +420,7 @@
       display: none;
     }
 
-    /* 互動經文與神學泡泡觸發詞 */
+    /* 互動經文與神學泡泡觸發詞（企業主色淺底） */
     .pop-trigger {
       color: var(--brand-primary);
       font-weight: 600;
@@ -582,12 +588,12 @@
       display: none;
       margin-top: 12px;
       margin-left: 42px;
-      padding: 14px 16px;
+      padding: 16px 18px;
       background-color: #FFFFFF;
       border-radius: 12px;
       font-size: 0.92rem;
       color: var(--text-secondary);
-      line-height: 1.72;
+      line-height: 1.75;
     }
 
     .guide-content.open {
@@ -597,6 +603,24 @@
 
     .guide-content strong {
       color: var(--brand-primary);
+    }
+
+    .text-answer-box {
+      background-color: var(--blank-bg);
+      border-left: 3px solid var(--blank-border);
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      font-size: 0.91rem;
+    }
+
+    .text-answer-box .ans-label {
+      font-weight: 700;
+      color: var(--blank-text);
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.84rem;
     }
 
     /* Apple 風格彈出視窗 */
@@ -741,7 +765,7 @@
         </div>
       </div>
 
-      <!-- 安裝成 App 按鈕（未安裝或重整網頁時自動出現；已安裝成 App 後自動消失） -->
+      <!-- 安裝成 App 按鈕 -->
       <button class="install-btn" id="installAppBtn" aria-label="安裝成 App">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3v12"/>
@@ -788,7 +812,7 @@
         <div class="card-header">
           <div>
             <h2 class="card-title">信息內文與互動填空</h2>
-            <p class="card-subtitle">點擊虛線空格顯示解答，點擊底線詞彙查看經文與神學解析</p>
+            <p class="card-subtitle">點擊淡黃色空格顯示解答，點擊藍綠色詞彙查看經文與神學解析</p>
           </div>
           <div class="toolbar-actions">
             <span class="progress-pill" id="blankProgress">已解鎖 0 / 7</span>
@@ -932,9 +956,14 @@
             <div class="q-badge">1</div>
             <div class="q-title">上帝是在亞伯拉罕人生的什麼時刻給予他這次試驗？上帝要求他獻上什麼？</div>
           </div>
-          <button class="guide-btn" onclick="toggleGuide(this)">展開觀察重點與帶領方向</button>
+          <button class="guide-btn" onclick="toggleGuide(this)">查看本文答案與觀察重點</button>
           <div class="guide-content">
-            <strong>觀察重點：</strong>在「這些事以後」（創 22:1）——也就是等了 25 年終於生下以撒、家庭紛爭（夏甲與以實瑪利）解決、與外邦和平立約，人生最風平浪靜、最幸福安穩的時刻。上帝要求他獻上「你獨生的兒子，你所愛的以撒」，這代表亞伯拉罕生命中最珍貴、最放不下的心頭肉，也是他未來一切盼望的寄託。
+            <div class="text-answer-box">
+              <span class="ans-label">📖 信息本文答案</span>
+              <strong>1. 試驗的時刻：</strong>「這些事以後」，也就是以撒生了，並且夏甲、非利士人的爭論也解決，到了亞伯拉罕<strong>人生風平浪靜、最幸福的時刻</strong>之後（很多時候試驗會在一切非常美好的時候臨到）。<br>
+              <strong>2. 獻上的對象：</strong>「帶著你的兒子，你<strong>獨生的兒子</strong>，你<strong>所愛的以撒</strong>」，強調了三次最愛的以撒（亞伯拉罕唯一放不下的心頭肉）。
+            </div>
+            <strong>帶領延伸：</strong>上帝考試的題目往往是我們心中最在乎的（包括家人、金錢或工作），試驗是按著信心的程度，目的不是要摧毀，而是要使我們對神更有信心。
           </div>
         </div>
 
@@ -943,9 +972,14 @@
             <div class="q-badge">2</div>
             <div class="q-title">「火煉金子」說明神試驗我們信心的最終目的是什麼？能留下什麼？你個人曾經經歷哪些試驗？</div>
           </div>
-          <button class="guide-btn" onclick="toggleGuide(this)">展開觀察重點與帶領方向</button>
+          <button class="guide-btn" onclick="toggleGuide(this)">查看本文答案與觀察重點</button>
           <div class="guide-content">
-            <strong>帶領方向：</strong>參考彼得前書 1:7，火煉的目的不是要毀滅金子，而是要<strong>燒去雜質</strong>（自私、爭競、比較、嫉妒、虛假與對人的倚靠），最終留下「對神非常單純的信心」，使生命在基督顯現時得著稱讚與榮耀。鼓勵組員分享過去在環境壓力或低谷中，生命雜質被煉淨的真實見證。
+            <div class="text-answer-box">
+              <span class="ans-label">📖 信息本文答案</span>
+              <strong>1. 最終目的：</strong>把<strong>自私、爭競、比較、嫉妒和虛假</strong>都燒光（煉淨雜質），使你的生命經過試煉後「比精金更寶貴」，綻放出從神來的光輝與價值，在耶穌基督顯現的時候得著稱讚、榮耀、尊貴。<br>
+              <strong>2. 留下的事物：</strong>留下「<strong>對神非常單純的信心</strong>」。
+            </div>
+            <strong>分享引導：</strong>鼓勵組員分享過去在環境壓力或低谷中，生命裡的雜質（如自我倚靠、比較心態）如何被神煉淨的真實經歷。
           </div>
         </div>
 
@@ -954,9 +988,13 @@
             <div class="q-badge">3</div>
             <div class="q-title">亞伯拉罕清早毫不猶豫出發，這種不明白卻願意順服的態度，對你的學習是什麼？過去的經歷中，是否曾遇過當你堅持到底，發現神的恩典已經為你預備了一條出路？請試著分享。</div>
           </div>
-          <button class="guide-btn" onclick="toggleGuide(this)">展開觀察重點與帶領方向</button>
+          <button class="guide-btn" onclick="toggleGuide(this)">查看本文答案與帶領方向</button>
           <div class="guide-content">
-            <strong>帶領方向：</strong>真正的順服往往不是「完全想通了才行動」，而是「雖然不明白為什麼，但因為認識神是信實美善的，所以選擇立刻行動」。可引導組員回想生命中那些「夜最深的時候」，神如何像在摩利亞山預備公羊一樣，在最後一刻出現「不料」的轉機與出路（林前 10:13）。
+            <div class="text-answer-box">
+              <span class="ans-label">📖 信息本文重點</span>
+              亞伯拉罕沒有猶豫，清早起來就起身走了。他不明白為什麼神現在要收回以撒，但他願意<strong>用信心接受神量給他生命的每一個處境，用信心順服</strong>，相信神必有美好的旨意。當他順服到底、快承受不住時，出現了「<strong>不料</strong>」——神預備代替獻祭的公羊就扣在樹上（夜最深的時候，往往就是神要給你開一條出路的時候）。
+            </div>
+            <strong>分享引導：</strong>真正的順服不是「完全想通了才行動」，而是「雖然不明白，但因為認識神信實美善而選擇立刻順服」。邀請組員分享生命中經歷「不料」轉機的見證。
           </div>
         </div>
 
@@ -965,7 +1003,7 @@
             <div class="q-badge">4</div>
             <div class="q-title">亞伯拉罕的順服讓祝福範圍擴大到別人身上。你現在的處境，什麼可能是你生命中最放不下、神卻要你獻上的以撒（例如：工作、時間、金錢、關係、未來的掌控）？請分享，我們可以如何為你禱告？</div>
           </div>
-          <button class="guide-btn" onclick="toggleGuide(this)">展開觀察重點與帶領方向</button>
+          <button class="guide-btn" onclick="toggleGuide(this)">展開牧養與禱告帶領方向</button>
           <div class="guide-content">
             <strong>牧養與禱告提醒：</strong>這一題是整課的核心應用。小組長可先以身作則真誠分享自己的「以撒」，營造安全、不批判的氛圍。提醒組員：神要我們獻上以撒，不是為了剝奪我們的幸福，而是要我們不再把「祝福」當成偶像，好讓神能把更大的祝福（成為萬國的祝福）託付給我們。分享後請小組兩兩或圍圈為彼此按手禱告。
           </div>
@@ -1031,7 +1069,6 @@
 
     // =================================================================
     // 2. PWA 安裝成 App 偵測與一鍵安裝邏輯
-    //    - 取消安裝時保留按鈕；重整頁面時依據實際系統安裝狀態自動判斷
     // =================================================================
     const installAppBtn = document.getElementById('installAppBtn');
     const iosInstallModal = document.getElementById('iosInstallModal');
@@ -1044,7 +1081,6 @@
       });
     }
 
-    // 偵測目前是否正以「已安裝的獨立 App (Standalone)」模式開啟
     function isRunningStandalone() {
       return (
         window.matchMedia('(display-mode: standalone)').matches ||
@@ -1056,15 +1092,12 @@
       return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
     }
 
-    // 每次載入／重整頁面時即時偵測安裝狀態
     async function checkInstallAvailability() {
-      // 1. 若已經是從桌面 App 開啟，直接隱藏按鈕
       if (isRunningStandalone()) {
         installAppBtn.classList.remove('visible');
         return;
       }
 
-      // 2. 支援 getInstalledRelatedApps 的瀏覽器（Chrome/Edge/Android），直接查詢系統是否已安裝此 App
       if ('getInstalledRelatedApps' in navigator) {
         try {
           const relatedApps = await navigator.getInstalledRelatedApps();
@@ -1075,7 +1108,6 @@
         } catch (err) {}
       }
 
-      // 3. 若為 iOS 瀏覽器分頁模式，顯示安裝按鈕（供使用者加入主畫面）
       if (isIosDevice()) {
         installAppBtn.classList.add('visible');
       }
@@ -1083,7 +1115,6 @@
 
     checkInstallAvailability();
 
-    // 監聽瀏覽器發出的可安裝事件（只要系統判定尚未安裝，重整後都會自動觸發並顯示按鈕）
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
@@ -1092,17 +1123,14 @@
       }
     });
 
-    // 點擊「安裝 App」按鈕
     installAppBtn.addEventListener('click', async () => {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') {
-          // 使用者確認安裝：隱藏按鈕
           installAppBtn.classList.remove('visible');
           deferredPrompt = null;
         } else {
-          // 使用者按取消：按鈕保留不消失，若需再次點擊或重整都會正常出現
           installAppBtn.classList.add('visible');
         }
       } else if (isIosDevice()) {
@@ -1110,13 +1138,11 @@
       }
     });
 
-    // 監聽系統確認安裝完成事件
     window.addEventListener('appinstalled', () => {
       installAppBtn.classList.remove('visible');
       deferredPrompt = null;
     });
 
-    // 監聽視窗顯示模式切換（例如安裝後立即切換進獨立視窗）
     window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
       if (e.matches) {
         installAppBtn.classList.remove('visible');
@@ -1171,14 +1197,15 @@
     });
 
     // =================================================================
-    // 4. 小組討論帶領方向展開/收合
+    // 4. 小組討論本文答案與帶領方向展開/收合
     // =================================================================
     function toggleGuide(btn) {
       const box = btn.nextElementSibling;
-      box.classList.toggle('open');
-      btn.textContent = box.classList.contains('open')
-        ? '收合觀察重點與帶領方向'
-        : '展開觀察重點與帶領方向';
+      const isOpen = box.classList.toggle('open');
+      if (!btn.dataset.defaultText) {
+        btn.dataset.defaultText = btn.textContent;
+      }
+      btn.textContent = isOpen ? '收合答案與重點' : btn.dataset.defaultText;
     }
 
     // =================================================================
